@@ -145,6 +145,7 @@
                     android:hint="@string/register_form_firstname_title"
                     android:inputType="text"
                     android:textSize="15sp" />
+
             </org.digitalcampus.oppia.utils.ui.fields.ValidableTextInputLayout>
 
             <org.digitalcampus.oppia.utils.ui.fields.ValidableTextInputLayout
@@ -162,7 +163,6 @@
             </org.digitalcampus.oppia.utils.ui.fields.ValidableTextInputLayout>
 
             <org.digitalcampus.oppia.utils.ui.fields.ValidableTextInputLayout
-
                 android:id="@+id/register_form_phoneno_field"
                 style="@style/Oppia.CustomField.TextInputLayout"
                 android:layout_marginTop="@dimen/margin_medium"
