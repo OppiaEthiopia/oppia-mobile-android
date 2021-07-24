@@ -3,14 +3,12 @@ package org.digitalcampus.oppia.fragments.prefs;
 import android.annotation.SuppressLint;
 import android.os.Bundle;
 
+import androidx.preference.EditTextPreference;
+
 import org.digitalcampus.mobile.learning.BuildConfig;
 import org.digitalcampus.mobile.learning.R;
 import org.digitalcampus.oppia.activity.PrefsActivity;
 import org.digitalcampus.oppia.application.AdminSecurityManager;
-import org.digitalcampus.oppia.application.App;
-
-import androidx.preference.EditTextPreference;
-import androidx.preference.Preference;
 
 public class MainPreferencesFragment extends BasePreferenceFragment {
 
@@ -37,7 +35,7 @@ public class MainPreferencesFragment extends BasePreferenceFragment {
 
         findPreference(PrefsActivity.PREF_ADVANCED_SCREEN).setOnPreferenceClickListener(preference -> {
             AdminSecurityManager adminSecurityManager = AdminSecurityManager.with(getActivity());
-            if (App.ADMIN_PROTECT_ADVANCED_SETTINGS && adminSecurityManager.isAdminProtectionEnabled()) {
+            if (adminSecurityManager.isActionProtected(R.id.action_advanced_settings)) {
                 adminSecurityManager.promptAdminPassword(() -> {
                     preference.setOnPreferenceClickListener(null);
                     preference.performClick();

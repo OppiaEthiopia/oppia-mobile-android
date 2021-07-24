@@ -2,9 +2,11 @@ package androidTestFiles.UI;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.view.View;
 
 import androidx.preference.PreferenceManager;
 import androidx.test.espresso.Espresso;
+import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.espresso.contrib.DrawerActions;
 import androidx.test.espresso.contrib.NavigationViewActions;
 import androidx.test.espresso.contrib.RecyclerViewActions;
@@ -13,14 +15,17 @@ import androidx.test.espresso.matcher.ViewMatchers;
 import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.rule.ActivityTestRule;
 
+import org.digitalcampus.mobile.learning.BuildConfig;
 import org.digitalcampus.mobile.learning.R;
 import org.digitalcampus.oppia.activity.MainActivity;
 import org.digitalcampus.oppia.activity.PrefsActivity;
 import org.digitalcampus.oppia.model.Course;
 import org.digitalcampus.oppia.model.CoursesRepository;
 import org.digitalcampus.oppia.model.User;
+import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -49,7 +54,9 @@ import static androidx.test.espresso.matcher.RootMatchers.isPlatformPopup;
 import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withParent;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static org.hamcrest.Matchers.allOf;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Matchers.any;
 import static org.mockito.Matchers.anyBoolean;
@@ -217,9 +224,13 @@ public class AdminProtectedUITest extends DaggerInjectMockUITest {
                 .perform(RecyclerViewActions.actionOnItem(hasDescendant(withText(R.string.prefSecurity_title)),
                         click()));
 
-        onView(withId(androidx.preference.R.id.recycler_view))
-                .perform(RecyclerViewActions.actionOnItem(hasDescendant(withText(R.string.prefAdminProtection)),
-                        click()));
+        Matcher<View> viewMatcher = withId(androidx.preference.R.id.recycler_view);
+        if (isTabletLand) {
+            viewMatcher = allOf(withId(androidx.preference.R.id.recycler_view),
+                    withParent(withParent(withParent(withId(R.id.frame_prefs_right)))));
+        }
+        onView(viewMatcher).perform(RecyclerViewActions.actionOnItem(
+                hasDescendant(withText(R.string.prefAdminProtection)), click()));
 
         switch (adminProtectionOption) {
 
@@ -228,7 +239,6 @@ public class AdminProtectedUITest extends DaggerInjectMockUITest {
                 break;
             case PROTECTION_OPTION_ONLY_ACTION:
                 checkAdminPasswordDialogIsNOTDisplayed();
-                pressBack();
                 break;
             case PROTECTION_OPTION_ONLY_ADMIN:
                 checkAdminPasswordDialogIsDisplayed();
@@ -245,23 +255,24 @@ public class AdminProtectedUITest extends DaggerInjectMockUITest {
                 .perform(RecyclerViewActions.actionOnItem(hasDescendant(withText(R.string.prefSecurity_title)),
                         click()));
 
-        onView(withId(androidx.preference.R.id.recycler_view))
-                .perform(RecyclerViewActions.actionOnItem(hasDescendant(withText(R.string.prefAdminPassword)),
-                        click()));
+        Matcher<View> viewMatcher = withId(androidx.preference.R.id.recycler_view);
+        if (isTabletLand) {
+            viewMatcher = allOf(withId(androidx.preference.R.id.recycler_view),
+                    withParent(withParent(withParent(withId(R.id.frame_prefs_right)))));
+        }
+        onView(viewMatcher).perform(RecyclerViewActions.actionOnItem(
+                hasDescendant(withText(R.string.prefAdminPassword)), click()));
+
 
         switch (adminProtectionOption) {
 
             case PROTECTION_OPTION_ADMIN_AND_ACTION:
-                onView(withId(android.R.id.edit)).perform(clearText(), typeText("any_pass"), closeSoftKeyboard());
-                onView(withId(android.R.id.button1)).perform(click());
                 checkAdminPasswordDialogIsDisplayed();
                 break;
             case PROTECTION_OPTION_ONLY_ACTION:
                 onView(withId(android.R.id.edit)).check(doesNotExist());
                 break;
             case PROTECTION_OPTION_ONLY_ADMIN:
-                onView(withId(android.R.id.edit)).perform(clearText(), typeText("any_pass"), closeSoftKeyboard());
-                onView(withId(android.R.id.button1)).perform(click());
                 checkAdminPasswordDialogIsDisplayed();
                 break;
         }
@@ -276,12 +287,41 @@ public class AdminProtectedUITest extends DaggerInjectMockUITest {
                 .perform(RecyclerViewActions.actionOnItem(hasDescendant(withText(R.string.prefAdvanced_title)),
                         click()));
 
-        onView(withId(androidx.preference.R.id.recycler_view))
-                .perform(RecyclerViewActions.actionOnItem(hasDescendant(withText(R.string.prefServer)),
-                        click()));
+        if (adminProtectionOption == PROTECTION_OPTION_ADMIN_AND_ACTION) {
+            checkAdminPasswordDialogIsDisplayed();
+            // Advances settings admin pass
+            return;
+        }
 
-        onView(withId(android.R.id.edit)).perform(clearText(), typeText("http://any.server"), closeSoftKeyboard());
-        onView(withId(android.R.id.button1)).perform(click());
+        Matcher<View> viewMatcher = withId(androidx.preference.R.id.recycler_view);
+        if (isTabletLand) {
+            viewMatcher = allOf(withId(androidx.preference.R.id.recycler_view),
+                    withParent(withParent(withParent(withId(R.id.frame_prefs_right)))));
+        }
+        onView(viewMatcher).perform(RecyclerViewActions.actionOnItem(
+                hasDescendant(withText(R.string.prefServer)), click()));
+
+        switch (adminProtectionOption) {
+
+            case PROTECTION_OPTION_ONLY_ACTION:
+                checkAdminPasswordDialogIsNOTDisplayed();
+                break;
+            case PROTECTION_OPTION_ONLY_ADMIN:
+                checkAdminPasswordDialogIsNOTDisplayed();
+                break;
+        }
+
+    }
+
+
+    @Test
+    public void checkAdminProtectionOnAdvancedSettingsClick() throws Exception {
+
+        prefsActivityTestRule.launchActivity(null);
+
+        onView(withId(androidx.preference.R.id.recycler_view))
+                .perform(RecyclerViewActions.actionOnItem(hasDescendant(withText(R.string.prefAdvanced_title)),
+                        click()));
 
         switch (adminProtectionOption) {
 
@@ -292,13 +332,11 @@ public class AdminProtectedUITest extends DaggerInjectMockUITest {
                 checkAdminPasswordDialogIsNOTDisplayed();
                 break;
             case PROTECTION_OPTION_ONLY_ADMIN:
-                checkAdminPasswordDialogIsDisplayed();
+                checkAdminPasswordDialogIsNOTDisplayed();
                 break;
         }
 
     }
-
-
 
     @Test
     public void checkAdminProtectionOnManageCoursesClick() throws Exception {

@@ -24,7 +24,6 @@
             android:id="@+id/btn_download_courses"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/padding_medium"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -39,13 +38,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
+            android:layout_gravity="center"
             android:layout_toStartOf="@id/btn_download_courses"
             android:layout_alignParentStart="true"
             android:layout_marginStart="@dimen/padding_medium"
             android:gravity="center_vertical"
-            tools:text="Tag title"
-            android:textSize="15sp"
-            />
+            android:textColor="@color/subtitle_bar_text_color"
+            android:textSize="@dimen/text_size_medium"
+            android:text="@string/select_category"/>
 
 
     </RelativeLayout>
