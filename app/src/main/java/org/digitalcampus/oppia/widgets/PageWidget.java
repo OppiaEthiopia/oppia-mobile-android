@@ -1,16 +1,16 @@
-/* 
+/*
  * This file is part of OppiaMobile - https://digital-campus.org/
- * 
+ *
  * OppiaMobile is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * (at your option) any later version.
- * 
+ *
  * OppiaMobile is distributed in the hope that it will be useful,
  * but WITHOUT ANY WARRANTY; without even the implied warranty of
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
- * 
+ *
  * You should have received a copy of the GNU General Public License
  * along with OppiaMobile. If not, see <http://www.gnu.org/licenses/>.
  */
@@ -19,13 +19,12 @@ package org.digitalcampus.oppia.widgets;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 
@@ -41,9 +40,7 @@ import org.digitalcampus.oppia.model.Activity;
 import org.digitalcampus.oppia.model.Course;
 import org.digitalcampus.oppia.model.Media;
 import org.digitalcampus.oppia.utils.TextUtilsJava;
-import org.digitalcampus.oppia.utils.resources.ExternalResourceOpener;
 import org.digitalcampus.oppia.utils.resources.JSInterface;
-import org.digitalcampus.oppia.utils.resources.JSInterfaceForBackwardsCompat;
 import org.digitalcampus.oppia.utils.resources.JSInterfaceForInlineInput;
 import org.digitalcampus.oppia.utils.resources.JSInterfaceForResourceImages;
 import org.digitalcampus.oppia.utils.storage.FileUtils;
@@ -60,21 +57,13 @@ import java.util.List;
 import androidx.annotation.NonNull;
 import androidx.core.text.HtmlCompat;
 
-import com.google.android.material.snackbar.Snackbar;
-
 public class PageWidget extends BaseWidget implements JSInterfaceForInlineInput.OnInputEnteredListener {
 
 	public static final String TAG = PageWidget.class.getSimpleName();
-
-	private static final String VIDEO_SUBPATH = "/video/";
-	private static final String RESOURCE_SUBPATH = "/resources/";
-
 	private WebView webview;
 
 	private final List<JSInterface> jsInterfaces = new ArrayList<>();
 	private final List<String> inlineInput = new ArrayList<>();
-	private List<String> pageResources = new ArrayList<>();
-	private final List<String> openedResources = new ArrayList<>();
 
 	public static PageWidget newInstance(Activity activity, Course course, boolean isBaseline) {
 		PageWidget myFragment = new PageWidget();
@@ -116,36 +105,28 @@ public class PageWidget extends BaseWidget implements JSInterfaceForInlineInput.
 	@Override
 	public void onActivityCreated(Bundle savedInstanceState) {
 		super.onActivityCreated(savedInstanceState);
+		webview = super.getActivity().findViewById(activity.getActId());
 		// get the location data
 		String url = course.getLocation() + activity.getLocation(prefLang);
-		int defaultFontSize = Integer.parseInt(prefs.getString(PrefsActivity.PREF_TEXT_SIZE, "16"));
 
-		webview = super.getActivity().findViewById(activity.getActId());
+		int defaultFontSize = Integer.parseInt(prefs.getString(PrefsActivity.PREF_TEXT_SIZE, "16"));
 		webview.getSettings().setDefaultFontSize(defaultFontSize);
 		webview.getSettings().setAllowFileAccess(true);
 
 		try {
-			String contents = FileUtils.readFile(url);
-			pageResources = ExternalResourceOpener.getResourcesFromContent(contents);
-
 			webview.getSettings().setJavaScriptEnabled(true);
 
-			JSInterfaceForBackwardsCompat backwardsCompatJSInterface = new JSInterfaceForBackwardsCompat(getContext());
-			jsInterfaces.add(backwardsCompatJSInterface);
-			webview.addJavascriptInterface(backwardsCompatJSInterface, backwardsCompatJSInterface.getInterfaceExposedName());
-
-            //We inject the interface to launch intents from the HTML
+			//We inject the interface to launch intents from the HTML
 			JSInterfaceForResourceImages imagesJSInterface = new JSInterfaceForResourceImages(getContext(), course.getLocation());
 			jsInterfaces.add(imagesJSInterface);
-            webview.addJavascriptInterface(imagesJSInterface, imagesJSInterface.getInterfaceExposedName());
+			webview.addJavascriptInterface(imagesJSInterface, imagesJSInterface.getInterfaceExposedName());
 
 			JSInterfaceForInlineInput inputJSInterface = new JSInterfaceForInlineInput(getContext());
 			inputJSInterface.setOnInputEnteredListener(this);
 			jsInterfaces.add(inputJSInterface);
-            webview.addJavascriptInterface(inputJSInterface, inputJSInterface.getInterfaceExposedName());
+			webview.addJavascriptInterface(inputJSInterface, inputJSInterface.getInterfaceExposedName());
 
-
-			webview.loadDataWithBaseURL("file://" + course.getLocation() + File.separator, contents, "text/html", "utf-8", null);
+			webview.loadDataWithBaseURL("file://" + course.getLocation() + File.separator, FileUtils.readFile(url), "text/html", "utf-8", null);
 		} catch (IOException e) {
 			webview.loadUrl("file://" + url);
 		}
@@ -153,32 +134,42 @@ public class PageWidget extends BaseWidget implements JSInterfaceForInlineInput.
 
 		webview.setWebViewClient(new WebViewClient() {
 
-            @Override
-            public void onPageFinished(WebView view, String url) {
-                //We execute the necessary JS code to bind our JavascriptInterfaces
-                for (JSInterface jsInterface : jsInterfaces){
+			@Override
+			public void onPageFinished(WebView view, String url) {
+				//We execute the necessary JS code to bind our JavascriptInterfaces
+				for (JSInterface jsInterface : jsInterfaces){
 					view.loadUrl(jsInterface.getJavascriptInjection());
 				}
-            }
-
-            // set up the page to intercept videos
-			@Override
-			public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
-				return handleUrl(request.getUrl().getPath());
 			}
 
-			private boolean handleUrl(final String url){
-				if (url.contains(VIDEO_SUBPATH)) {
+			// set up the page to intercept videos
+			/**
+			 * @deprecated (replace as soon as possible)
+			 */
+			@Override
+			@Deprecated
+			public boolean shouldOverrideUrlLoading(WebView view, String url) {
+
+				if (url.contains("/video/")) {
 					// extract video name from url
-					int startPos = url.indexOf(VIDEO_SUBPATH) + VIDEO_SUBPATH.length();
+					int startPos = url.indexOf("/video/") + 7;
 					String mediaFileName = url.substring(startPos);
 					PageWidget.super.startMediaPlayerWithFile(mediaFileName);
 					return true;
 
-				} else if (url.contains(RESOURCE_SUBPATH)){
-					openResourceExternally(url);
+				} else {
+
+					try {
+						Intent intent = new Intent(Intent.ACTION_VIEW);
+						Uri data = Uri.parse(url);
+						intent.setData(data);
+						PageWidget.super.getActivity().startActivity(intent);
+						return true;
+					} catch (ActivityNotFoundException anfe) {
+						Log.d(TAG,"Activity not found", anfe);
+					}
+					return false;
 				}
-				return false;
 			}
 		});
 	}
@@ -191,37 +182,6 @@ public class PageWidget extends BaseWidget implements JSInterfaceForInlineInput.
 	@Override
 	protected void onTextSizeChanged(int fontSize) {
 		webview.getSettings().setDefaultFontSize(fontSize);
-	}
-
-	private void openResourceExternally(String fileUrl){
-		File fileToOpen = new File(fileUrl);
-		try {
-			Intent intent = ExternalResourceOpener.getIntentToOpenResource(getContext(), fileToOpen);
-			if(intent != null){
-				PageWidget.super.getActivity().startActivity(intent);
-				openedResources.add(fileToOpen.getName());
-			} else {
-				showResourceOpenerNotFoundMessage(fileToOpen);
-			}
-		} catch (ActivityNotFoundException anfe) {
-			Log.d(TAG,"Activity not found", anfe);
-		}
-	}
-
-	private void showResourceOpenerNotFoundMessage(File fileToOpen){
-		String filename = fileToOpen.getName();
-		Intent installAppIntent = ExternalResourceOpener.getIntentToInstallAppForResource(getContext(), fileToOpen);
-
-		Snackbar snackbar = Snackbar.make(getView(),
-				getContext().getString(R.string.external_resource_app_missing, filename), Snackbar.LENGTH_LONG);
-		snackbar.show();
-		snackbar.setActionTextColor(Color.WHITE);
-
-		if (installAppIntent != null){
-			snackbar.setAction(R.string.external_resource_install_app, v -> {
-				PageWidget.super.getActivity().startActivity(installAppIntent);
-			});
-		}
 	}
 
 	public boolean activityMediaCompleted() {
@@ -245,15 +205,6 @@ public class PageWidget extends BaseWidget implements JSInterfaceForInlineInput.
 	public boolean getActivityCompleted(){
 		if (!this.activityMediaCompleted()){
 			return false;
-		}
-
-		if (!pageResources.isEmpty() && BuildConfig.PAGE_COMPLETION_VIEW_FILE){
-			//If there are files, they have to be opened to mark the activity has completed
-			for (String resource : pageResources){
-				if (!openedResources.contains(resource)){
-					return false;
-				}
-			}
 		}
 
 		long timetaken = this.getSpentTime();
@@ -287,9 +238,6 @@ public class PageWidget extends BaseWidget implements JSInterfaceForInlineInput.
 				.createActivityIntent(course, activity, getActivityCompleted(), isBaseline);
 		if (!inlineInput.isEmpty()){
 			delegate.addExtraEventData("inline_input", TextUtilsJava.join(",", inlineInput));
-		}
-		if (!openedResources.isEmpty()){
-			delegate.addExtraEventData("opened_resources", TextUtilsJava.join(",", openedResources));
 		}
 		delegate.registerPageActivityEvent(timetaken, readAloud);
 	}
