@@ -86,6 +86,21 @@ public class UIUtils {
         iso6391ToIso6392Map.put("ti", "tir"); // Tigrinya
         iso6391ToIso6392Map.put("so", "som"); // Somali
         iso6391ToIso6392Map.put("aa", "aar"); // Afar
+        iso6391ToIso6392Map.put("wal", "wal"); // Wolaytta
+        iso6391ToIso6392Map.put("sid", "sid"); // Sidamo
+        iso6391ToIso6392Map.put("gaz", "tig"); // Gazi
+        iso6391ToIso6392Map.put("tig", "tig"); // Tigre
+        iso6391ToIso6392Map.put("kam", "kan"); // Kambaata
+        iso6391ToIso6392Map.put("hau", "hau"); // Hadiyya
+        iso6391ToIso6392Map.put("gur", "gur"); // Gurage
+        iso6391ToIso6392Map.put("gwi", "gwi"); // Gwich'in
+        iso6391ToIso6392Map.put("sah", "sah"); // Saho
+        iso6391ToIso6392Map.put("bla", "bla"); // Berta
+        iso6391ToIso6392Map.put("meb", "meb"); // Me'en
+        iso6391ToIso6392Map.put("gdo", "gdo"); // Gedeo
+        iso6391ToIso6392Map.put("tsd", "tsd"); // Tsamai
+        iso6391ToIso6392Map.put("tum", "tum"); // Tumtum
+        iso6391ToIso6392Map.put("bta", "bta"); // Berta
     }
 
     // Method to map ISO 639-1 language codes to ISO 639-2 codes
