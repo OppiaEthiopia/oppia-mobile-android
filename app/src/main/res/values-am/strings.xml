@@ -676,6 +676,7 @@
     <string name="offline_course_import.media_files_imported">የሚዲያ ፋይሎች ገብተዋል።</string>
     <string name="offline_course_import.course_files_imported">የኮርስ ፋይሎች ገብተዋል</string>
     <string name="bluetooth_not_supported">ብሉቱዝ አይደገፍም</string>
+    <string name="Video_list" />
 
 </resources>
 
