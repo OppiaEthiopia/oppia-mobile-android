@@ -20,6 +20,7 @@ package org.digitalcampus.oppia.activity;
 import android.animation.Animator;
 import android.animation.AnimatorSet;
 import android.animation.ObjectAnimator;
+import android.annotation.SuppressLint;
 import android.app.ProgressDialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -66,7 +67,6 @@ import org.digitalcampus.oppia.listener.GamificationEventListener;
 import org.digitalcampus.oppia.model.Course;
 import org.digitalcampus.oppia.utils.TextUtilsJava;
 import org.digitalcampus.oppia.utils.UIUtils;
-import org.digitalcampus.oppia.utils.storage.Storage;
 import org.digitalcampus.oppia.utils.storage.StorageAccessStrategy;
 
 import java.util.concurrent.TimeUnit;
@@ -124,7 +124,7 @@ public class AppActivity extends AppCompatActivity implements APIKeyRequestListe
         intentFilter.addAction(Intent.ACTION_MEDIA_MOUNTED);
         intentFilter.addAction(Intent.ACTION_MEDIA_UNMOUNTED);
         intentFilter.addDataScheme("file");
-        registerReceiver(externalStorageReceiver, intentFilter);
+        ContextCompat.registerReceiver(this, externalStorageReceiver, intentFilter, ContextCompat.RECEIVER_NOT_EXPORTED);
 
         checkSdCardStatus();
     }
@@ -304,13 +304,13 @@ public class AppActivity extends AppCompatActivity implements APIKeyRequestListe
         gamificationReceiver.setGamificationEventListener(this);
         IntentFilter broadcastFilter = new IntentFilter(GamificationService.BROADCAST_ACTION);
         broadcastFilter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             registerReceiver(gamificationReceiver, broadcastFilter, RECEIVER_EXPORTED);
         } else {
-            registerReceiver(gamificationReceiver, broadcastFilter);
+
+            ContextCompat.registerReceiver(this, gamificationReceiver, broadcastFilter, ContextCompat.RECEIVER_NOT_EXPORTED);
         }
-
-
 
         //We check if the user session time has expired to log him out
         if (BuildConfig.SESSION_EXPIRATION_ENABLED) {
@@ -382,7 +382,7 @@ public class AppActivity extends AppCompatActivity implements APIKeyRequestListe
             final View rootView = ((ViewGroup) findViewById(android.R.id.content)).getChildAt(0);
 
             Snackbar snackbar = Snackbar.make(rootView, "", BaseTransientBottomBar.LENGTH_INDEFINITE);
-            Snackbar.SnackbarLayout layout = (Snackbar.SnackbarLayout) snackbar.getView();
+            @SuppressLint("RestrictedApi") Snackbar.SnackbarLayout layout = (Snackbar.SnackbarLayout) snackbar.getView();
             layout.setClickable(false);
 
             // Hide the text
@@ -445,7 +445,7 @@ public class AppActivity extends AppCompatActivity implements APIKeyRequestListe
             mp.start();
         }
 
-        Snackbar.SnackbarLayout layout = (Snackbar.SnackbarLayout) snackbar.getView();
+        @SuppressLint("RestrictedApi") Snackbar.SnackbarLayout layout = (Snackbar.SnackbarLayout) snackbar.getView();
         View snackView = layout.getChildAt(0);
         TextView tvGamificationNotifPoints = snackView.findViewById(R.id.tv_gamification_notif_points);
 
