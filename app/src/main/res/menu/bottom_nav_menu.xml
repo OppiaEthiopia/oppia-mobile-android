@@ -16,9 +16,9 @@
         android:id="@+id/nav_bottom_points"
         android:icon="@drawable/ic_nav_points"
         android:title="@string/nav_points" />
-    <item
-        android:id="@+id/nav_bottom_video"
-        android:icon="@drawable/ic_nav_video"
-        android:title="@string/nav_video" />
+<!--    <item-->
+<!--        android:id="@+id/nav_bottom_video"-->
+<!--        android:icon="@drawable/ic_nav_video"-->
+<!--        android:title="@string/nav_video" />-->
 
 </menu>

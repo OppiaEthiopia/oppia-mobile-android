@@ -421,8 +421,8 @@
     <string name="open_digest.login_register">ይግቡ / ይመዝገቡ</string>
     <string name="open_digest.login_text">አልገቡም። እባክዎ ለመቀጠል ይግቡ/ይመዝገቡ።</string>
 
-    <string name="menu_sync">Synchronise</string>
-    <string name="title_sync">Synchronise</string>
+    <string name="menu_sync">አሳምር</string>
+    <string name="title_sync">አሳምር</string>
     <string name="export_activity.text">የቅርብ ጊዜ እንቅስቃሴዎችን እና የጥያቄ መከታተያዎችን ወደ ውጫዊ ፋይል ይላኩ።</string>
     <string name="export_task_completed">ወደ ውጭ መላክ ተጠናቅቋል</string>
     <string name="export_task_completed_text">\'%1$s\' የሚባል ፋይል በመሳሪያው የፋይል ሲስተም ላይ ተቀምጧል</string>
@@ -676,6 +676,7 @@
     <string name="offline_course_import.media_files_imported">የሚዲያ ፋይሎች ገብተዋል።</string>
     <string name="offline_course_import.course_files_imported">የኮርስ ፋይሎች ገብተዋል</string>
     <string name="bluetooth_not_supported">ብሉቱዝ አይደገፍም</string>
+    <string name="change_interface_language">የበይነገጽ ቋንቋ ቀይር</string>
     <string name="Video_list" />
 
 </resources>
