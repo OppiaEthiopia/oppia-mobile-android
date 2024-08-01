@@ -27,6 +27,7 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.media.MediaPlayer;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
@@ -303,7 +304,13 @@ public class AppActivity extends AppCompatActivity implements APIKeyRequestListe
         gamificationReceiver.setGamificationEventListener(this);
         IntentFilter broadcastFilter = new IntentFilter(GamificationService.BROADCAST_ACTION);
         broadcastFilter.setPriority(IntentFilter.SYSTEM_HIGH_PRIORITY);
-        registerReceiver(gamificationReceiver, broadcastFilter);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            registerReceiver(gamificationReceiver, broadcastFilter, RECEIVER_EXPORTED);
+        } else {
+            registerReceiver(gamificationReceiver, broadcastFilter);
+        }
+
+
 
         //We check if the user session time has expired to log him out
         if (BuildConfig.SESSION_EXPIRATION_ENABLED) {
