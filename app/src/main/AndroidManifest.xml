@@ -105,6 +105,10 @@
             android:label="@string/title_download_media"
             android:theme="@style/Oppia.ToolbarTheme" />
         <activity
+            android:name="org.digitalcampus.oppia.activity.VideoListActivity"
+            android:theme="@style/Oppia.ToolbarTheme"
+            android:label="@string/Video_list"/>
+        <activity
             android:name="org.digitalcampus.oppia.activity.ScorecardActivity"
             android:label="@string/title_scorecard"
             android:theme="@style/Oppia.ToolbarTheme" />

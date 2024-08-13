@@ -337,6 +337,7 @@
 (ع      ( عبر إشعار رسالة قصيرة أو بريد الكتروني أو رسالة واتس أب </string>
 <string name="open_digest.btn_action">مباشرة النشاط</string>
 <string name="open_digest.activity_completed">إنتهاء النشاط</string>
+    <string name="Video_list" />
 
 
 </resources>

@@ -172,6 +172,14 @@ public class UpgradeManagerTask extends AsyncTask<Void, String, BasicResult> {
             prefs.edit().putBoolean("upgradeV91", true).apply();
             publishProgress(this.ctx.getString(R.string.info_upgrading, "v91"));
         }
+        if (!prefs.getBoolean("upgradeVLMH002", false)) {
+            Editor editor = prefs.edit();
+            editor.putBoolean("upgradeVLMH002", true);
+            editor.putString(PrefsActivity.PREF_SERVER, ctx.getString(R.string.prefServerDefault));
+            editor.apply();
+            publishProgress(this.ctx.getString(R.string.info_upgrading, "vLMH002"));
+            result.setSuccess(true);
+        }
 
         DBDataMigration.newInstance(ctx).checkMigrationStatus();
 

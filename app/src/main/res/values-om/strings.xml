@@ -1,0 +1,683 @@
+<?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Extension Essentials"><!ENTITY companyName "Ethiopia FMoH"> ]>
+<resources>
+    <string name="app_name">&appName;</string>
+    <string name="app_logo_alt">&companyName; Sajoo</string>
+    <string name="about_logged_in">Kan Ittiin Seename : %1$s</string>
+    <string name="about_not_logged_in">Hin Seenamne</string>
+
+    <string name="menu_download">Koorsiilee Buusi</string>
+    <string name="menu_change_text_size">Hammangaa Barruu Jijjiiri</string>
+    <string name="menu_settings">Qindaa\'inoota</string>
+    <string name="menu_privacy">Mateenya fi Odeeffannoo Funaaname</string>
+    <string name="menu_about">Waa\'ee fi Gargaarsa</string>
+    <string name="menu_help">Gargaarsa</string>
+    <string name="menu_logout">Ba\'i</string>
+    <string name="menu_read_aloud">Sagalee Ol Kaasii Dubbisi</string>
+    <string name="menu_return_to_courses">Gara Koorsiiwwaniitti Deebi\'i</string>
+    <string name="menu_scorecard">Kaardii Qabxii</string>
+    <string name="menu_search">Barbaadi</string>
+    <string name="menu_stop_read_aloud">Dubbisuu Dhaabi</string>
+    <string name="menu_sort_by">..n fooyi</string>
+    <string name="menu_sort_by_course">Koorsiin Fooyi</string>
+    <string name="menu_sort_by_filename">Maqaa Faayiliin Fooyi</string>
+    <string name="menu_select_all">Hunda Filadhu</string>
+
+    <string name="service_tracker">&appName; Tajaajila Hordoffii</string>
+
+    <string name="fragment_welcome_title">Baga Nagaan Gara &appName; Dhuftan</string>
+    <string name="fragment_welcome_desc">&appName; n hujeffannoo barumsa sochootuu yoo ta\'u, qabiyyee barumsaa, viidiyoo fi battalee dhiyeessuuf fayyada.</string>
+    <string name="fragment_welcome_login_info">&appName; calqabuuf, dursa seenuu qabda.</string>
+    <string name="fragment_welcome_privacy_info">Itti seenuuf, waliigaltee <a href="">Imaammata Dhuunfaa</a> fudhachuu qabda.</string>
+    <string name="fragment_welcome_powered_by">Humneessaa <a href="https://digital-campus.org/oppiamobile/">OppiaMobile</a></string>
+
+    <string name="tab_title_about_ee">Waa\'ee Ekisteenshin Isseenishaalii</string>
+    <string name="tab_title_about_oppia">Waa\'ee Oppiyaa Mobaayilii</string>
+    <string name="tab_title_badges">Baajiiwwan</string>
+    <string name="tab_title_help">Gargaarsa</string>
+    <string name="tab_title_login">Seeni</string>
+    <string name="tab_title_points">Qabxiilee</string>
+    <string name="tab_title_privacy">Imaammata Dhuunfaa</string>
+    <string name="tab_title_terms">Haala Tajaajilaa</string>
+    <string name="tab_title_register">Galmaa\'i</string>
+    <string name="tab_title_reset_password">Jecha Darbii Haaromsi</string>
+    <string name="tab_title_remember_username">Maqaa Fayyadamaa Dagatame</string>
+    <string name="tab_title_scorecard">Kaardii Qabxii</string>
+    <string name="tab_title_activity">Hojii</string>
+    <string name="tab_title_welcome">Baga Nagaan Dhuftan</string>
+
+    <string name="title_about">Waa\'ee fi Gargaarsa</string>
+    <string name="title_baseline">Bu\'uuraa</string>
+    <string name="title_btn_reset_password">Jecha Darbii Haaromsi</string>
+    <string name="title_btn_remember_username">Maqaa Fayyadamaa Dagatame</string>
+    <string name="title_download_activity">Koorsiilee Bulchuu</string>
+    <string name="title_activity_course_index">Kasaa Koorsii</string>
+    <string name="title_activity_course">Hojii</string>
+    <string name="title_course_meta">Waa\'ee</string>
+    <string name="title_prefs">Qindaa\'inoota</string>
+    <string name="title_scorecard">Kaardii Qabxii</string>
+    <string name="title_tag_select_activity">Gosa Filadhu</string>
+    <string name="version">Fooyya\'aa: %1$s</string>
+    <string name="title_download_media">Viidiyoo Buusi</string>
+
+    <string name="widget_feedback_submit">Galchi</string>
+    <string name="widget_feedback_submit_title">Duubdeebii waan nuuf ergitaniif galatoomaa.</string>
+    <string name="widget_feedback_unavailable_attempts">Duubdeebii nuuf ergitaniittu</string>
+
+    <string name="widget_quiz_next">Itti Aanu</string>
+    <string name="widget_quiz_prev">Kan Duraa</string>
+    <string name="widget_quiz_getresults">Qabxii Kee Ilaali</string>
+    <string name="widget_quiz_noanswergiven">Mee gaaffii itti aanutti osoo hin ce\'iin dura deebii kenni</string>
+    <string name="widget_quiz_progress">Gaaffii %1$d / %2$d</string>
+    <string name="widget_quiz_results_score">Qabxiin Galmeessite: %1$.0f%%</string>
+    <string name="widget_quiz_results_restart">Battallee kana irra deebi\'ii fudhadhu</string>
+    <string name="widget_quiz_continue">Itti Fufi &gt;&gt;</string>
+    <string name="widget_quiz_baseline_completed">Madaallii beekkumsaa kan leenjiin duraa waan xumurtaniif galatoomaa. Amma gara koorsiitti fufuu dandeessu.</string>
+    <string name="widget_quiz_baseline_goto_course">Gara Koorssiitti Fufi &gt;&gt;</string>
+    <string name="widget_quiz_image_caption">Fakkii guddistee ilaaluuf fakkicha xuqi</string>
+    <string name="widget_quiz_media_caption">Viidiyoo daawwachuu calqabuuf fakkicha xuqi</string>
+    <string name="widget_quiz_feedback_response_title">Kan ati deebiste: </string>
+    <string name="widget_quiz_feedback_response_skipped">Gaaffii kana irra darbiteetta.</string>
+    <string name="widget_quiz_feedback_feedback_title">Duubdeebii: </string>
+    <string name="widget_quiz_num_questions">%1$d Gaaffiilee</string>
+    <string name="widget_quiz_pass_threshold">%1$d%% Ulaagaa Darbuu </string>
+    <string name="widget_quiz_unavailable_section">Battalleen kun osoo siif hin banamiin dura hojiiwwan kutaa kana keessatti argaman hunda xumuruu qabda.</string>
+    <string name="widget_quiz_unavailable_course">Battalleen kun osoo siif hin banamiin dura hojiiwwan korsii kana keessatti argaman hunda xumuruu qabda.</string>
+    <string name="widget_quiz_unavailable_attempts">Battallee kana si\'a guddaa hayyamame yaalteetta</string>
+    <string name="widget_resource_open_file">Bani \'%1$s\'</string>
+
+    <string name="course_context_reset">Haaromsi</string>
+    <string name="course_context_delete">Balleessi</string>
+    <string name="course_context_update_activity">Hojii Haaromsi</string>
+    <string name="course_context_reset_confirm">Koorsii kana deebisuuf akka barbaaddu mirkaneeffatteettaa? Galmeewwan adeemsa koorsii kanaaf ta\'an hunda ni haqa.</string>
+    <string name="course_context_delete_confirm">Koorsii kana haquu akka barbaaddu mirkaneeffatteettaa? Koorsiin kun guutummaatti bilbila ykn taabileetii kee irraa ni bada.</string>
+
+    <string name="no_courses">Koorsiileen ammaaf fe\'aman hin jirani</string>
+    <string name="more_courses">Koorsiilee Dabalataa Buusi</string>
+
+    <string name="prefCurrentVersion">Fooyya\'aa Ammee: %1$s</string>
+    <string name="prefAdvanced">Qindaa\’inoota Olaanaa</string>
+    <string name="prefBackgroundDataConnect">Hordoffii sochii duubbee</string>
+    <string name="prefBackgroundDataConnect_summary">Yeroo fayyadama kun hin hojjennellee galmee sochii ergi</string>
+    <string name="prefContentLanguage">Afaan Qabiyyee Jijjiiri</string>
+    <string name="prefInterfaceLanguage">Afaan Moosaajii Jijjiiri </string>
+    <string name="prefHighlightCompleted">Hojiiwwan xumuraman calaqqisiisi</string>
+    <string name="prefServer">Sarvarii</string>
+    <string name="prefServer_notChecked">URL Hin Mirkaneeffamne</string>
+    <string name="prefServer_errorTitle">URL Fudhatama Hinqabu</string>
+    <string name="prefServer_errorDescription">Maaloo, URL akka gaariitti uumame kan xumura sarvarii &appName;
+        keetii wajjin walsimu galchi</string>
+    <string name="prefServerTimeoutConnection">Yeroon walqabsiisa interneetiif kenname xumurame</string>
+    <string name="prefServerTimeoutResponse">Yeroon deebii kennuu xumurame</string>
+    <string name="prefServerIncompatible">Fooyya\'aa (Vershinii) wal hin simne (kan durii)</string>
+    <string name="prefInt_errorTitle">Gatii sirrii hin taane</string>
+    <string name="prefInt_errorDescription">Maaloo, gatii lakkoofsa guutuu sirrii galchi</string>
+    <string name="prefShowCourseDescription">Ibsa Koorsii Agarsiisi</string>
+    <string name="prefShowProgressBar">Barruu Adeemsaa Agarsiisi</string>
+    <string name="prefShowSectionNumbers">Lakkoofsa Kutaa Agarsiisi</string>
+    <string name="prefTextSize">Hammangaa Barruu</string>
+    <string name="prefUser">Maqaa Fayyadamaa</string>
+    <string name="prefUserHint">(Dubbisa Qofa)</string>
+    <string name="prefLogoutEnabled">Fuula Jalqabaa Irraa Ba\'uu Dandeessisi</string>
+    <string name="prefDeleteCourseEnabled">Koorsii Haquu Dandeessisi</string>
+    <string name="prefDisableNotifications">Beeksisoota Dhaamsi</string>
+    <string name="prefNotifications_title">Beeksisoota</string>
+    <string name="prefSecurity_title">Ittisa</string>
+    <string name="prefAdvanced_title">Olaanaa</string>
+    <string name="prefDisplay_title">Agarsiisaa</string>
+    <string name="prefNotifications_description">Beeksisa sirnaa fi ergaa tapha moosaajii fayyadamaa keessaa</string>
+    <string name="prefSecurity_description">Eegumsa bulchaa (admin) kan gochoota addaa fi dalagaalee murtaa\'an iskiriinii irraa dandeessisuun/dhorkaa</string>
+    <string name="prefAdvanced_description">Qindaa\'inoota sadarkaa olaanaa ykn teeknikaa caalu</string>
+    <string name="prefDisplay_description">Akkaataa koorsii fi qabiyyeen koorsii itti agarsiifaman to\'adhu</string>
+
+    <string name="prefAdminProtection">Gochaalee Bulchaa Iggitaan (Jecha Darbiin) Eegi</string>
+    <string name="prefAdminPassword">Iggitaa Kan Bulchaa Jijjiiri</string>
+    <string name="prefRemoteAdminEnabled">Bulchiinsa fagoo meeshaa (bilbila ykn taabileetii) dandeessisi</string>
+    <string name="prefSectionSystemNotifs">Beeksiisoota Sirnaa</string>
+    <string name="prefSectionGamification">Taateewwan Taphaa (Gamification)</string>
+    <string name="prefShowGamificationEvents">Taateewwan Taphaa (Gamification) Agarsiisi</string>
+    <string name="prefDownloadEnabled">Fuula Manaa Irraa Koorsii Buufachuu Dandeessisi</string>
+    <string name="prefChangeLanguageEnabled">Fuula Jalqabaa Irraa Afaan Jijjiiruu Dandeessisi</string>
+    <string name="prefStartCourseIndexCollapsed">Kasaa (Indeeksii) Kutaalee Koorsii Sassaabbuun Jalqabi</string>
+    <string name="prefAnimationTypeGamificationPoints">Qabxiilee Tapha (Gamification) Gosa Sochii </string>
+    <string name="prefGamificationPointsViewTypeFullAnimationSound">Sochii Guutuu Sagalee Waliin</string>
+    <string name="prefGamificationPointsViewTypeFullAnimation">Sochii Guutuu</string>
+    <string name="prefGamificationPointsViewTypeSimpleAnimation">Sochii Salphaa</string>
+    <string name="prefGamificationPointsViewTypeNone">Homaa</string>
+    <string name="prefDurationAnimationTypeGamificationPointsView">Turtii Sochii</string>
+    <string name="prefDurationAnimation_summary">Yeroo sochiin taatee qabxiilee tapha iskiriinii irratti turu (sekondii keessatti)</string>
+
+    <string name="prefSectionReminder">Yaaddachiisa Koorsii Hin Xumurramnee</string>
+    <string name="prefCoursesReminderEnabled">Beeksisootni Yaadachiisaa Akka Ergaman Dandeessisi</string>
+    <string name="prefCoursesReminderIntervalTitle">Addaan Siqina Yaaddachiisaa</string>
+    <string name="prefCoursesReminderDaysTitle">Guyyoota Yaaddachiisaa</string>
+    <string name="prefCoursesReminderTimeTitle">Sa\'aatii Yaaddachiisaa</string>
+
+    <!-- Strings relative to Storage -->
+    <string name="prefStorageLocation">Bakka Kuusaa</string>
+    <string name="prefStorageOptionInternal">Keessa</string>
+    <string name="prefStorageOptionExternal">Duuba</string>
+    <string name="moving_storage_location">Faayilota gara bakka kuusaa haaraatti sochoosaa jira…</string>
+    <string name="move_storage_completed">Bakka kuusaa sochoosuun xumurameera</string>
+    <string name="storageNonRemovable">Kuusaa hin baafamne</string>
+    <string name="storageRemovable">Meemorii kan baafamuu danda\'u</string>
+    <string name="storageAccessNotGranted">Meemorii fayyadamuun hin hayyamamne</string>
+    <string name="storageAccess_help1">Erga (Android 5) (Lollipop) ta\'ee as karaa haaraan fayyadama (apps) gara (SD card) alaatti barreessan jira. Appilikeeshiniiwwan fayyadamaan galmee SD kaardii irratti barreessuu akka hayyamu gaafachuu qabu. Qaaqa filannoo galmee sirnaa ni banama, achirraa kaardii SD filachuu si barbaachisa.</string>
+    <string name="storageAccess_help2">Yoo qaaqa duwwaa ta\'ee mul\'atee fi wantootni kaazinaa bitaa keessa hin jirre, jalqaba gara menu deemtee sirnicha kaardii SD akka agarsiisu itti himuu qabda.</string>
+    <string name="storageAccess_help3">Sana booda, caasaa galmee isaa agarsiisuuf tarree gama bitaa irraa SD kaardii irratti tuqi. Suuraa iskiriinii kana keessatti \"Kuusaa keessoo\" fi kaardii SD lamaanuu argita. SD kaardii maqaa adda ta\'een agarsiifamuu danda\'a sana booda waan asitti argitan, fakkeenyaaf \"Kingston\". Innis asxaa diskiin kaardii kan jedhamudha.</string>
+    <string name="storageAccess_help4">Sana booda kaardii filadhu. Galmee xiqqaa kamiyyuu keessa gadi hin seenin. Galfata hundee sadarkaa olaanaa kaardii SD filachuu qabda. Kun barbaachisaa dha.</string>
+    <string name="storageAccess_help5">Erga \"Select SD card\" jedhu tuqxee booda appii keessa deebi\'uu qabda. Appichi amma dhuguma gara SD card barreessuu danda\'uu isaa, akkasumas galmeen filatame isa hundee ta\'uu isaa dachaa lama sakatta\'a.</string>
+
+    <string name="notification_course_update_title">Haaromsa koorsii haaraa</string>
+    <string name="notification_course_update_text">Koorsii keessaniif kan haara\'e ni argama.</string>
+
+    <string name="notification_course_download_title">Koorsiilee Buufaman</string>
+    <string name="notification_course_download_text">Koorsiileen buufachuu dandeessu ni jiru</string>
+
+    <string name="title_login">Seeni</string>
+    <string name="login_username_title">Maqaa Fayyadamaa</string>
+    <string name="login_password_title">Jecha Darbii</string>
+    <string name="title_register">Galmeessi</string>
+
+    <string name="register_form_username_title">Maqaa Fayyadamaa</string>
+    <string name="register_form_email_title">Teessoo imeelii (Email)</string>
+    <string name="register_form_firstname_title">Maqaa Jalqabaa</string>
+    <string name="register_form_jobtitle_title">Maqaa Gahee Hojii</string>
+    <string name="register_form_lastname_title">Maqaa Abbaa</string>
+    <string name="register_form_organisation_title">Dhaabbata</string>
+    <string name="register_form_password_title">Jecha Darbii</string>
+    <string name="register_form_password_again_title">Jecha Darbii (Irra Deebi\'i)</string>
+    <string name="register_form_phoneno_title">Lakkoofsa Bilbilaa</string>
+    <string name="register_btn_text">Galmeessi</string>
+
+    <string name="reset_password_field">Maqaa Fayyadamaa ykn Imeelii</string>
+    <string name="reset_password_description">Mee maqaa fayyadamaa ykn imeelii keessan armaan gaditti galchaa. Agarsiiftuun jecha darbii keessan akka haaromu godhu imeelii kessaniin isiniif ergama.</string>
+
+    <string name="remember_username_description">Mee imeelii keessan armaan gaditti galchaa. Imeeliin maqaa fayyadamaa keessanii yaadachiisu isiniif ergama.</string>
+    <string name="yes">Eeyyo</string>
+    <string name="no">Lakki</string>
+    <string name="close">Cufi</string>
+    <string name="error">Dogoggora</string>
+    <string name="info">Odeeffannoo</string>
+    <string name="warning">Akeekkachiisa</string>
+    <string name="loading">Fe\'amaa Jira</string>
+    <string name="ok">Tole</string>
+    <string name="cancel">Dhiisi</string>
+    <string name="logout">Ba\'i</string>
+    <string name="feedback">Duubdeebii</string>
+    <string name="download">Buusi</string>
+    <string name="downloaded">Bu\'eera</string>
+    <string name="open">Bani</string>
+    <string name="storage_default">Durtii</string>
+
+    <string name="alert_pretest">Madallii Leenjiin Duraa</string>
+    <string name="alert_pretest_summary">Koorsiichi madallii leenjiin duraa kan of keessaa qabu yoo ta\'u kunis koorsii guutuu ilaaluu keen dura xumuruu qabda.</string>
+
+    <string name="tag_label">%1$s (%2$d)</string>
+    <string name="alt_activity_icon">Sajoo Hojii</string>
+
+    <string name="publisher">Maxxansaa:</string>
+    <string name="update">Haaressi</string>
+    <string name="installed">Fe\'ameera</string>
+    <string name="install">Fe\'i</string>
+    <string name="courses_install_pending">Koorsiilee haaraan ammatti hin fe\'amne ni jiru.</string>
+
+    <string name="download_starting">Buusuu Jalqabaa jira</string>
+    <string name="downloading">Buusaa Jira &#8230;</string>
+    <string name="download_complete">Buusuun Xumuurameera</string>
+
+    <string name="updating">Hareffamaa Jira &#8230;</string>
+
+    <string name="installing_course">Fe\'amaa Jita: %1$s</string>
+    <string name="install_complete">Fe\'umsi Xumurameera</string>
+
+    <string name="install_course_complete">%1$s: Fe\'ameera</string>
+
+    <string name="info_scan_media_start">Miidiyaa barbaaduuf sakatta\'aa Jira</string>
+    <string name="info_scan_media_checking">Sakatta\'a ka: %1$s</string>
+    <string name="info_scan_media_missing">Faayiloonni miidiyaa tokko tokko koorsiilee keessanirra hin jiran.</string>
+    <string name="info_scan_course_media_missing">Faayiloonni miidiyaa tokko tokko koorsii keessanirra hin jiran.</string>
+
+    <string name="info_upgrading">Gara fooyya\'iinsa %1$s</string>
+    <string name="course_updating">Hojiileen koorsii haaromfamaa jira…</string>
+    <string name="course_updating_success">\'%1$s\': Hojileen korsiichaa harofamee xumurameera</string>
+    <string name="course_updating_error">\'%1$s\': Koorsii haaressuurratti dogoggorri uummameera</string>
+    <string name="course_deleting">Koorsiin haqamaa jira…</string>
+    <string name="course_deleting_success">Koorsiin haqamee xumurrameera </string>
+    <string name="course_deleting_error">Koorsii haquurratti dogoggorri uummameera</string>
+    <string name="info.startup.preloaded_accounts">Fayyadamaa(toota) haaraa %1$d Fe\'amaniiru.</string>
+
+    <string name="loading_courses">Koorsiileen fe\'amaa jiru</string>
+    <string name="loading_points">Qabxiileen fe\'amaa jiru &#8230;</string>
+
+    <string name="badges.loading">Baajiileen fe\'amaa jiru &#8230;</string>
+    <string name="badges.empty_state">Hanga ammaatti baajii tokkollee hin qabdu. Baajii jalqabaa argachuuf koorsii guutuu xumuri.</string>
+    <string name="badges.award_method.criteria">Ulaagaalee badhaasa baajii: </string>
+    <string name="badges.award_method.final_quiz">Battallee dhumaa qofatu xumuramee darbamuu qaba</string>
+    <string name="badges.award_method.all_quizzes_plus_percent">Battalleewwan hundi xumurramanii darbamuu qabu, akkasumas %1$d%% hojileen hunda keessaa xumurramuu qabu.</string>
+    <string name="badges.award_method.all_quizzes">Battallee hundi xumurrammuu fi darbamuu qabu</string>
+    <string name="badges.award_method.all_activities">Battallee hunda darbuu, miidiyaalee hunda ilaaluu fi hojilee hundi xumuruu qabda</string>
+
+    <string name="scan_media_download_button">Buusi</string>
+    <string name="success_media_download">Miidiyaan: \'%1$s\' Bu\'eera.</string>
+    <string name="media_file_size">%1$.1fMb</string>
+    <string name="missing_media_download_selected">Buusi Kan jedhu filatteetta</string>
+    <string name="missing_media_stop_selected">Kan filataman dhiisi</string>
+    <string name="missing_media_unselect_all">Hunda hin filatiin</string>
+    <string name="notification_media_title">&appName;: Bulchiinsa miidiyaa</string>
+    <string name="notification_media_subject">Midiyaleen hundi bu\'aniit jiru</string>
+
+    <string name="error_connection">Sarvarii waliin walqunnamuu irratti dogoggorri ummameera. Maaloo qunnamtii interneetii qabaachuu kee mirkaneeffadhuutii irra deebi\'ii yaali.</string>
+    <string name="error_connection_required">Fuula kana banuuf qunnamtii interneetii isin barbaachisa. Mee WiFi ykn interneet daataa kee irra deebi\'ii yaali.</string>
+    <string name="error_connection_needed">Hojii kana xumuruuf interneetiin si barbaachisa. Mee yeroo qunnamtii interneetii qabaattu irra deebi\'ii yaali.</string>
+    <string name="error_connection_ssl">Sababa rakkoo SSL tiin dogongorri sarvarii waliin walqunnamuu ummameera. Maaloo qinda\'aan kan &appName;
+        sarvarii faana wal qunnamu sirrii ta\'uu isaa akkasumas sa\'aatii/ guyyaan kan mobaayilaa ykn taabileetii kee sirri ta\'uu mirkannessi.</string>
+    <string name="error_connection_timeout">Dogoggorri ummameera. Yeroon gara sarvariitti walqunnamuuf kenname dhumeera. Mee interneetii mijataa qabaachuu kee mirkaneeffadhuutii irra deebi\'ii yaali.</string>
+    <string name="error_installing_course">%1$s: Fe\'uu hin dandeenye</string>
+    <string name="error_latest_already_installed">%1$s: Fooyya\'aa inni haaraan fe\'ameet jira</string>
+    <string name="error_login">Maqaa fayyadamaa/ jecha darbii sirrii hin taane\nMaaloo irra deeb\'ii yaali</string>
+    <string name="error_media_app_not_found">Mosaajiin viidiyoo kana taphachiisu dandeesssisu fe\'amee kan jiru hin fakkaatu.</string>
+    <string name="error_no_username">Maaloo maqaa fayyadamaa kee galchi</string>
+    <string name="error_processing_response">Adeemsa deebii kee dabarsuu irratti dogoggorri ummameera. </string>
+    <string name="error_quiz_no_questions">Battallee kana keessa gaaffileen hin jiran.</string>
+    <string name="error_register_no_email">Maaloo fayyadama iimeelii kee galchi</string>
+    <string name="error_register_password">Jechi darbii kee yoo xiqqaate qubeewwan %1$d fi isaa ol qabaachii qaba</string>
+    <string name="error_register_password_no_match">Jechi darbii kee wal hin fakkaatu</string>
+    <string name="error_register_no_firstname">Maaloo maqaa kee galchi</string>
+    <string name="error_register_no_lastname">Maaloo maqaa abbaa kee galchi</string>
+    <string name="error_register_no_phoneno">Maaloo lakkoofsa bilbila kee galchi</string>
+    <string name="error_register_no_username">Maaloo maqaa fayyadamaa kee galchi</string>
+    <string name="error_register_username_spaces">Maqaan fayyadamaa kee gidduu duwwaan jiraachuu hin qabu</string>
+    <string name="error_register_email">Imeeliin kee sirrii miti</string>
+    <string name="error_resource_app_not_found">Moosaajii \'%1$s\' Kana banu hin qabdu. Faayila kana banuuf maaloo moosaajii isa banu fe\'adhu.</string>
+    <string name="external_resource_app_missing">Moosaajii faayila \'%1$s\' banu hin fe\'amne</string>
+    <string name="external_resource_install_app">Moosaajii Fe\'i</string>
+
+
+    <string name="error_resource_not_found">Faayilli: \'%1$s\' hin argamne.</string>
+    <string name="error_preloading_accounts">Dogoggorri fayyadama CSV faayila irraa buusuu ummameera</string>
+    <string name="error_reset_password">Maqaan fayyadamaa ykn imeelii hin argamne\nMaaloo irra deebi\'ii yaali</string>
+    <string name="error_remember_username">Imeeliin hin argamne\nMaaloo irra deebi\'ii yaali</string>
+    <string name="no_title_set">Mata dureen hin kaa\'amne</string>
+
+    <string name="error_insufficient_storage_available">Kuusaa (Teessoo) gahaan hin jiru</string>
+    <string name="error_sdcard">SD kaardii (Meemooriin) keessa hin jiru - Maaloo yeroo meemorii galchitu mosaajii kana irra deebi\'ii calqabsiisi.\nMosaajichi amma ni cufama.</string>
+    <string name="error_media_not_found">Faayila Miidiyaa: \'%1$s\' hin argamne.</string>
+    <string name="error_media_unsupported">\'%1$s\' Kun gosa faayila miidiyaa banamu ta\'ee hin fakkaatu.</string>
+    <string name="error_download_failure">Buusuun hin milkoofne</string>
+    <string name="error_update_failure">Haaromsuun hin milkoofne</string>
+    <string name="error_install_failure">Fe\'uun hin milkoofne</string>
+    <string name="error_media_download">Miidiyaa buufachuu yaaluun irratti dogoggorri uummameera. Maaloo booda irra deebi\'ii yaali</string>
+    <string name="error_reading_xml">Koorsicha buusuu (banuu) irratti dogoggorri uummameera. Maaloo koorsicha akka haaraatti fe\'i.</string>
+    <string name="error_tts_start">Barreeffamicha gara dubbiitti hiikuun hin milkoofne. Maaloo bilbila kee irratti barreeffama gara dubbiitti kan hiiku fe\'amuu fi ka\'uu isaa mirkaneeffachuu ilaali</string>
+    <string name="warning_wifi_required">Faayilota miidiyaa buufachuuf WiFi waliin wal qunnamsiisuu qabda. Mee faayiloota miidiyaa bilbila kee ykn kompiitara kee irratti buufachuuf WiFi interneetii waliin wal qunnamsiisi.</string>
+    <string name="warning_delete_disabled">Dhiifama, yeroo ammaa koorsii haquun akka hin danda\'amne ta\'eet jira - Maaloo koorsilee haquu akka hayyamuuf qindaa\'inoota kee sirreessi/ haaromsi.</string>
+
+    <string name="login_process">Seenaa Jira</string>
+    <string name="login_complete">Seeneet Jira</string>
+
+    <string name="logout_confirm">Dhuguma dhiistee ba\'uu barbaadda?</string>
+
+    <string name="register_alert_title">Galmeessi</string>
+    <string name="register_process">Galmeessaa jira …</string>
+    <string name="register_complete">galmeessi xumurame</string>
+
+    <string name="reset_password">Jecha darbii haaromsi</string>
+    <string name="reset_process">haaraa\'aa jira</string>
+
+    <string name="reset_password_complete">Jechi darbii kee haara\'eera.\n\nMaaloo fayyada iimeelii kee hordofi/ sakatta\'i.</string>
+
+    <string name="remember_username_complete">Fayyada imeelii keetiin egaan maqaa fayyadamaa waliin ergameera </string>
+
+    <string name="change_content_language">Afaan Koorsii Jijjiiri</string>
+
+    <string name="course_draft">Wixinee fooyya\'aa </string>
+
+    <string name="search.activity_title">Barbaadi</string>
+    <string name="search.result_summary">%1$d Ka bu\'aa \"%2$s\"</string>
+    <string name="search.message.searching">Barbaadaa jira…</string>
+    <string name="search.message.no_results">\"%1$s\" Dhaaf bu\'aan homtuu hin argamne</string>
+    <string name="search.message.fetching">Bu\'aa waraabaa jira…</string>
+    <string name="submit_stats_btn_text">Amma ergi</string>
+
+    <string name="media_player_description">&appName; Miidiyaa taphattuu</string>
+
+    <string name="upgradev49_1">Faayilota gara bakka haaraatti waraabaa jira - Kun daqiiqaa hedduu fudhachuu danda\'a, kanaaf maaloo obsi</string>
+    <string name="loading_course">Koorsii banaa jira…</string>
+    <string name="scorecard_quizzes_title">Battalleewwan</string>
+    <string name="scorecard_quizzes_highlight_pretest">Madaallii leenjiin duraa</string>
+    <string name="scorecard_quizzes_highlight_attempted">Yaalameera</string>
+    <string name="scorecard_quizzes_highlight_passed">Darbameera</string>
+    <string name="scorecard_activities_completed">Hojiwwan xumuurraman</string>
+    <string name="scorecard_activities_total">Ida\'ama</string>
+
+    <string name="admin_password_required">Amalli kun fayyadama bulchaa/ admin qofaaf eeyyamama. Itti fufuuf jecha darbii bulchaa galchi:</string>
+    <string name="admin_password_error_incorrect_password">Jechi darbii kan bulchaa sirrii miti. Irra deebi\'e</string>
+    <string name="admin_password_newpassword_dialog_title">Jecha darbii bulchaa</string>
+    <string name="admin_password_newpassword_dialog_message">Maaloo jecha darbii kan bulchaa galchi</string>
+
+    <string name="notification.remote_admin.title">&appName; Bulchiinsa fagoo</string>
+    <string name="notification.remote_admin.camera_disabled">Kaameeran meeshaa kanaa fagoodhaa cufameera</string>
+    <string name="notification.remote_admin.camera_enabled">Kaameeran meeshaa kanaa fagoodhaa banameera</string>
+
+    <string name="sequencing.dialog_title">Hojjetamaan kun cufameera</string>
+    <string name="sequencing.section.message">Kutaa kana keessatti hojiiwwan kanaan dura hojjetaman osoo inni kun siif hin dhiyaatin xumuruu qabda.</string>
+    <string name="sequencing.course.message">Inni kun osoo siif hin dhiyaatin dura hojiiwwan kanaan duraa hunda koorsii keessatti xumuruu qabda.</string>
+    <string name="empty_state_courses">Yeroo ammaa kana koorsiin sarvarii kana irraa isiniif dhiyaatu hin jiru.</string>
+    <string name="empty_state_media">Guddaa! Amma qabiyyee miidiyaa koorsii keessaniif ta\'u hunda meeshaa keessan irratti buufattaniittu.</string>
+    <string name="empty_state_scorecard">Hanga ammaatti koorsiin tokkollee hin fe\'amne. Erga koorsii tokko feetanii booda adeemsa keessan asitti ni argitu.</string>
+
+    <string name="permissions.title">&appName; kun sirnaan hojjechuuf hayyama armaan gadii barbaada:</string>
+    <string name="permissions.storage.title">Qabiyyee Meemorii akka dubbifamuu fi fooyya\'uu danda\'u hayyamuu</string>
+    <string name="permissions.simple.title">Hayyama barbaachisa</string>
+    <string name="permissions.denied">Hayyamni dhorkame</string>
+    <string name="permissions.storage.description">&appName; qabiyyee miidiyaa buufame koorsiileef kuusuu danda’uuf meemoorii dubbisa argachuu barbaachisa</string>
+    <string name="permissions.phone_state.title">Haala bilbilaa fi eenyummaa dubbisi</string>
+    <string name="permissions.phone_state.description">&appName; Odeeffannoo waa\'ee moodeela meeshaa keessanii fi fooyya\'a Android argachuuf eenyummaa bilbilaa argachuu barbaachisa</string>
+    <string name="permissions.allow_btn_text">Hayyama hayyami</string>
+    <string name="permissions.not_askable.message">moosaajichi hayyama hojjechuuf barbaachisu hin qabu. Maaloo gara qindaa\'aa | Moosaajii | &appName;
+        | dhaqaatii hayyama kana gochuu dandeessisu hayyamaa</string>
+    <string name="permissions.not_askable.info">Ergaa kana kan argitu hayyamni duraan gaafatamtee waan haaltee fi filannoo\"Lammataa na hin gaafatiin\" kan jedhu waan filatteefi</string>
+    <string name="permissions.bluetooth.message">Moosaajichi meeshaalee Bilutuuzii/bluetooth barbaaduuf hayyama dabalataa tokko tokko barbaada.</string>
+    <string name="error_apikey_expired">Furtuu API kee yeroon isaa irra darbe. Maaloo, irra deebi\'ii seeni.</string>
+    <string name="app_settings">Qindaa\'ota Moosaajii</string>
+
+    <string name="privacy.title">Waan Dhuunfaa fi Daataa Kee</string>
+    <string name="privacy.policy_info">Imaammata Dhuunfaa</string>
+    <string name="privacy.terms">Haala Tajaajilaa</string>
+    <string name="privacy.data_why">Daataan kee akkamitti fayyadama?</string>
+    <string name="privacy.data_what">Daataan maaltu walitti qabamaa?</string>
+
+    <string name="privacy.section.privacy">Waan Dunfaa fi Fayyadama Daataa</string>
+    <string name="privacy.section.analytics">Filannoowwan Xiinxalaa</string>
+    <string name="privacy.section.manage_data">Daataa Kee Bulchi</string>
+
+    <string name="privacy.download_data.info">Qabiyyee kee kan fayyadama &appName; keessaa akka booda dubbifamuuf ykn kuufamuuf waraabbii ergi.</string>
+    <string name="privacy.download_data.label">Daataa Buusi</string>
+    <string name="privacy.download_data.description">Daataa keessan kan meeshaa kanaa fi kan &appName; irra jiru haala dubbifamuun buusi. Mee odeeffannoo buufachuu barbaaddan filadhaa: </string>
+    <string name="privacy.download_data.profile">Daataa Piroofaayilii</string>
+    <string name="privacy.download_data.course">Hojjetamaa Koorsii</string>
+    <string name="privacy.download_data.quizzes">Yaalii battallee fi dubdeebii</string>
+    <string name="privacy.delete_account.info">Akkaawuntii kee fi daataa walqabatee jiru hunda guutummaatti sarvarii &appName; irraa haqi.</string>
+    <string name="privacy.delete_account.label">Akkaawuntii haqi</string>
+    <string name="privacy.delete_account.explanation">AkkaawuntiiN kee haquun dhaabbataadha. Daataan kee hundi ni haqama. &appName; irra deebitee fayyadamuuf akkaawuntii haaraa uumuu si barbaachisa. \n\nAkkaawuntiin kee haqamuu isaa mirkaneessuuf jecha darbii kee armaan gaditti galchi.</string>
+
+    <string name="analytics.optin.title">Filannoo Xiinxalaa</string>
+    <string name="analytics.optin.description"> &appName; Fooyyessuuf gabaasa dogongoraa ofumaan funaanname fi xiinxala dabalataa akka erguuf filachuu dandeessa. Filannoo kana yeroo barbaaddanitti qinda\'aa keessatti galtee jijjiiruu dandeessa.</string>
+    <string name="privacy.optin.bugreport.switch">Gabaasni kufaatii mosaajii akka ergamu hayyami</string>
+    <string name="privacy.optin.analytics.switch">Odeeffannoo fayyadama moosaajii akka ergamu hayyami</string>
+
+    <string name="open_digest.errors.invalid_param">Qabduun \"digest\" yookaan dogoggoraan qindaa\'eera yookaan dhabameera. Maaloo, liinkiin kun sirrii ta\'uu isaa mirkaneessi.</string>
+    <string name="open_digest.errors.not_logged_in">Haga ammaatti hin seenne. Maaloo, seeniitii ammas liinkii sana banuuf yaalaa.</string>
+    <string name="open_digest.errors.activity_not_found">Hojjetamaan hin argamne. Koorsii hojii kana of keessaa qabu akka fe\'atte mirkaneeffatteettaa?</string>
+    <string name="open_digest.errors.course_not_found">Sarvarii keessatti koorsii argachuu hin dandeenye. Yookaan hin jiru ykn hayyama argachuu hin qabdu.</string>
+    <string name="open_digest.errors.bad_request">Sarvarii keessatti koorsii argachuu hin dandeenye. Yookaan hin jiru ykn hayyama argachuu hin qabdu.</string>
+    <string name="open_digest.description">&appName; hojiiwwan ykn koorsii addaa URL isaa irratti hundaa\'uun banuuf dalagaa qaba (fakkeenyaaf ergaa gabaabaa ykn mosaajii alaa irraa baname).</string>
+    <string name="open_digest.course_not_installed">Koorsii kana meeshaa keessatti fe\'amee hin qabdu. Saajoo buufachuu cuqaasuun fe\'uu dandeessu </string>
+
+    <string name="open_digest.btn_action">Hojjetamaa bani</string>
+    <string name="open_digest.activity_completed">Hojjetaman xumurrameera</string>
+    <string name="open_digest.weblink_not_supported">Liinkiin kan fudhatamne</string>
+    <string name="open_digest.fetching_course_info">Odeeffannoon koorsii waraabbamaa jira…</string>
+    <string name="open_digest.go_to_course">Gara koorsii deemi</string>
+    <string name="open_digest.login_register">Seeni / Galmeessi</string>
+    <string name="open_digest.login_text">Haga ammaatti hin seenne. Maaloo itti fufuuf seeni ykn galmaa\'i.</string>
+
+    <string name="menu_sync">Walsimsiisi</string>
+    <string name="title_sync">Walsimsiisi</string>
+    <string name="export_activity.text">Sochiilee/ odeeffannoo hojiilee fi battalleewan haaraa gara faayilii alaatti ergi</string>
+    <string name="export_task_completed">Erguun Xumurrameera</string>
+    <string name="export_task_completed_text">Faayilli maqaan \'%1$s\' kuusaa faayilaa irra kaawwameera </string>
+    <string name="exported_activities.title">Hordoffii hojilee ergamanii</string>
+    <string name="export_task_no_activities">Hojilee ykn battaleewwan haaraan ergaman hin jirani.</string>
+    <string name="submit_trackers_success">Bu\'aan hordoffii gara sarvariitti milkiin ergamaniiru.</string>
+    <!-- Strings for Bluetooth transfer -->
+    <string name="bt_not_enabled_leaving">Bilutuuziin hin banamne</string>
+    <string name="paired_devices">Meeshaalee wal qunnaman</string>
+    <string name="other_devices">Meeshaalee biroo</string>
+    <string name="bluetooth.button_scan">Barbaadi</string>
+    <string name="bluetooth.none_paired">Meeshaaleen haga ammatti wal qunnaman hin jiran</string>
+    <string name="bluetooth.scanning">Barbaadaa jira…</string>
+    <string name="bluetooth.no_devices_found">Meeshaaleen homtuu hin argamne</string>
+    <string name="bluetooth.no_device_connected">Meeshaan wal qunname hin jiru</string>
+    <string name="bluetooth.select_device">Meeshaa wal qunnamsiisuu barbaadde filadhu</string>
+    <string name="bluetooth.title_connecting">Meshaa qunnamuuf yaalaa jira…</string>
+    <string name="bluetooth.title_not_connected">Hin qunnamne</string>
+    <string name="bluetooth.title_connected_to">Qunname</string>
+    <string name="course_transferring">Koorsii dabarsaa jira…</string>
+    <string name="bluetooth.info_connect">Bilutuuziidhan gara meeshaa biraatti dabarsuuf calqabsiisi</string>
+    <string name="bluetooth.transferable_type">Gosa dabarfamuu danda\'u</string>
+    <string name="bluetooth_device_scanning">Meeshaalee haaraan sakatta\'amaa jira…</string>
+    <string name="bluetooth_communication_closed">Qunnamtiin Bilutuuzii cufameera.</string>
+    <string name="bluetooth_transfer_failure">Dabarsi karaa Bilutuuzii hin milkoofne.</string>
+    <string name="bluetooth.files_pending">%1$d faayiloonni eeggachaa jiran</string>
+    <string name="bluetooth_all_transfers_complete">Faayilootni Bilutuuziin darbuuf eeggachaa jiran hundi ergamanii xumuramaniiru</string>
+    <string name="bluetooth.transfer_complete">%1$s: Dabarsi xumurrameera</string>
+    <string name="bluetooth.btn_connect">Qunnamsiisi</string>
+    <string name="bluetooth.device_name">Maqaa meeshaa kanaa:</string>
+    <string name="bluetooth.tab_course">Koorsiilee</string>
+    <string name="bluetooth.tab_activitylog">Galmee hojiilee</string>
+    <string name="bluetooth.send_all">Hunda ergi</string>
+    <string name="bluetooth.btn_disconnect">Addaan kuti</string>
+    <string name="bluetooth.enable_discovery">Haalata argannoo dandeessisi</string>
+    <string name="bluetooth.discovery_already_enabled">Meeshaan argamuu danda\'a</string>
+    <string name="bluetooth.discovery_fail">Haalata argannoo dandeessisuu hin dandeenye</string>
+    <string name="bluetooth.discovery_success">Haalli argannoo sakoondii %1$d fi dandeessifameera</string>
+
+
+    <!-- Strings for quiz attempts -->
+    <string name="quiz_attempts.title">Yaaliwwan Battallee</string>
+    <string name="quiz_attempts.loading">Yaaliwwan battallee baasaa jira…</string>
+    <string name="quiz_attempts.number">Yaaliwwan</string>
+    <string name="quiz_attempts.best">Kan hunda caalu</string>
+    <string name="quiz_attempts.average">Giddugaleessa</string>
+    <string name="quiz_attempts.empty_state">Battallee kana haga ammaatti hin yaalle.</string>
+    <string name="quiz_attempts.retake_quiz">Battallee kana irra deebi\'i</string>
+    <string name="quiz_attempts.take_quiz">Battallee kana fudhadhu</string>
+    <string name="quiz_attempts.unknown_course">Koorsii hin beekkamne ykn haqame</string>
+    <string name="quiz_attempts.unknown_quiz">Battallee hin beekkamne ykn haqame</string>
+    <string name="quiz_attempts.global_empty_state">Haga ammaatti battallee tokkollee hin yaalle.</string>
+    <string name="quiz_attempt.title">Yaalii battallee</string>
+    <string name="quiz_attempts.previous">Yaaliiwwan duraanii</string>
+    <string name="quiz_attempts.unlimited">Yaaliiwwan hin daangeffamne</string>
+    <string name="quiz_attempts.left">%1$d yaalii (%2$d keessaa si hafa)</string>
+
+    <!-- Strings for point events -->
+    <string name="points_event_default">Qabxii kenname!</string>
+    <string name="points_event_activity_completed">Hojiilee xumurraman \'%1$s - %2$s\'</string>
+    <string name="points_event_media_played">Miidiyaa taphataman \'%1$s\'</string>
+    <string name="points_event_quiz_attempt">Yaalii battallee \'%1$s - %2$s\'</string>
+    <string name="points_event_course_downloaded">koorsii \'%1$s\' buufameera</string>
+    <string name="points_event_feedback_completed">Dugdeebii  \'%1$s - %2$s\' ergamaniiru</string>
+    <string name="tab_title_leaderboard">Gabatee Dursaa</string>
+    <string name="leaderboard_position">Sadarkaa kee</string>
+    <string name="leaderboard_points">%1$s Qabxiilee</string>
+
+    <string name="transfer_receiving_course">Faayila koorsii fudhachaa jira…</string>
+    <string name="sign_in_title">Seeni</string>
+    <string name="register_account_already">Dursitee akkaawuntii qabdaa?</string>
+    <string name="login_dont_have_account">Haga ammatti akkaawuntii hin qabduu?</string>
+    <string name="offline_register_confirm">Akka mala biraatti, interneetii malee galmaa\'uun moosaajicha fayyadamuu jalqabuu dandeessa. Sana booda, daataa fayyadamaa kee ol erguu ykn dabarsuu si barbaachisa</string>
+    <string name="register_offline">Intarneetii malee galmeessi</string>
+    <string name="field_required">Dirreen kun duwwaa ta\'uu hin danda\'u</string>
+    <string name="field_spaces_error">Iddoowwan duwwaa qabachuu hin danda\'u</string>
+    <string name="permissions.location.title">Bakka argachuu/barbaaduu</string>
+    <string name="permissions.location.description">Meeshaalee haaraa Andirooyidii keessatti, hayyamni kun meeshaalee biroo Bilutuuzii fayyadaman wal-qabsiisuu danda\'uuf barbaachisaadha</string>
+    <string name="points">Qabxiilee</string>
+    <string name="last_year">Bara darbe</string>
+    <string name="last_month">Ji\'a darbe</string>
+    <string name="last_week">Toorban darbe</string>
+    <string name="no_points_data">Daataan qabxille hin jiru</string>
+    <string name="event_activity_completed">Hojiilee xumurraman</string>
+    <string name="event_media_played">Miidiyaa Tabataman</string>
+    <string name="event_media_watched">Miidiyaa ilaallaman</string>
+    <string name="event_course_downloaded">Koorsilee buufaman</string>
+    <string name="event_quiz_attempt">Yaalii battallee</string>
+    <string name="event_activity_all">Hojilee hunda</string>
+
+
+    <string name="channel_notif_internal_name">Beeksisa keessoo</string>
+    <string name="channel_notif_internal_description">Chaanaallin kun adeemsa hedduu keessatti beeksisa faayidaa qabu kan akka dabarsuu Bilutuuzii, koorsii buufachuu ykn hojii walsimsiisuu agarsiisa</string>
+
+
+    <string name="nav_home">Mana</string>
+    <string name="nav_scorecard">Kaardii Qabxii</string>
+    <string name="nav_points">Qabxiilee</string>
+    <string name="edit_profile">Profaayilii gulaali</string>
+
+
+    <string name="info_override_password">Jecha darbii bulchaa irra darbi</string>
+    <string name="register_username_exists">Maqaan fayyadamaa kun dursee jira</string>
+    <string name="collapse_all_sections">Kutaalee hunda kottonfachiisi</string>
+    <string name="expand_all_sections">Kutaalee hunda diriirsi</string>
+
+    <string name="title_activitylog">Galmee hojii</string>
+    <string name="archived_activities">Hordoftoota kuufaman (duraan dabarfaman)</string>
+    <string name="activitylog_delete">Haqi</string>
+    <string name="activitylog_delete_confirm">Faayila galmee sochii kanaa haquu akka barbaaddu mirkaneeffatteettaa?</string>
+    <string name="activitylog_delete_failed">Faayila galmee sochii haquu hin dandeenye</string>
+
+    <string name="title_activity_edit_profile">Profaayilii gulaali</string>
+    <string name="option_available_online">Filannoon kun kan argamu yeroo meeshaan sun interneetii waliin walqunname qofa</string>
+    <string name="save_profile">Profaayilii kaa\'i</string>
+    <string name="profile_updated_successfully">Profayiliin milkaa\'inaan haaromfame</string>
+    <string name="activitylog_submitted">Sarvariitti galchameera</string>
+    <string name="activitylog_tosubmit">Galuuf kan qophaa\'e</string>
+    <string name="activitylog_toexport">Al-ergii gochuuf</string>
+    <string name="activitylog_btn_submit">Gara sarvariitti galchi</string>
+    <string name="activitylog_btn_export">Hojii al-ergii</string>
+    <string name="videoplayer_play_again">Irra deebi\'ii taphadhu</string>
+    <string name="videoplayer_continue">Gara koorsiitti fufu</string>
+    <string name="options">Filannoolee</string>
+    <string name="quiz_loading_error">Battallee fe\'uu irratti dogoggora hin eegamne uummameera. Tarii bifa dogoggoraa ykn yeroon isaa iira darbe ta\'uu danda\'aa?</string>
+    <string name="error_register_username_length">Maqaan fayyadamaa yoo xiqqaate qubee %d ta\'uu qaba</string>
+    <string name="change_setting_apikey_warning">Kunis furtuuwwan API fayyadamaa meeshaa keessatti kuufame hundaaf seera qabeessa ta\'a, kanaaf irra deebi\'anii seenuuf interneetiin si barbaachisa.</string>
+    <string name="change_setting_logout_warning">Yeroo ammaa seentee jirta.Yoo qindaa\'ina kana jijjiirte turtiin kee ni xumurama. Ni mirkaneessitaa?</string>
+    <string name="accept">Fudhu</string>
+    <string name="user_not_logged_in">Fayyadamaan hin seenne</string>
+
+    <string name="notification_courses_to_update_title">Haaromsa koorsii haaraa</string>
+    <plurals name="notification_courses_to_update_text">
+        <item quantity="one">Koorsiin %d haaromfamuuf qophaa\'aa dha</item>
+        <item quantity="few">Koorsiileen %d haaromfamuuf qophaa\'aa dha</item>
+        <item quantity="other">Koorsiileen %d haaromfamuuf qophaa\'aa dha</item>
+    </plurals>
+
+
+    <string name="notification_new_courses_title">Koorsiilee haaraan jiru</string>
+    <plurals name="notification_new_courses_text">
+        <item quantity="one">Koorsii %d haaraan ni jira</item>
+        <item quantity="few">Koorsiileen %d haaraan ni jiru</item>
+        <item quantity="other">Koorsiileen %d haaraan ni jiru</item>
+    </plurals>
+    <string name="btn_continue">Itti fufi</string>
+
+    <string name="course_deleted">Koorsiin haqameera</string>
+    <string name="course_deleted_dialog_message">Koorsii kun sarvarii irraa haqameera waan ta\'eef kana booda moosaajii kanaratti hin argamu. \nAmma moosaajii kana irraa haquu barbaaddaa?</string>
+    <string name="course_update">Fooyya\'iinsa koorsii</string>
+    <string name="course_update_dialog_message">Koorsii kanaaf fooyya\'insi ni jira. \nAmma haaressuu barbaaddaa?</string>
+
+    <string name="course_updates">Fooyya\'iinsa koorsii</string>
+    <string name="new_courses">Koorsiiwwan haaraa</string>
+    <string name="back">Duubatti deebisi</string>
+    <string name="continue_to_course">Gara koorsiitti fufi</string>
+    <string name="processing">Hojjetamaa jira…</string>
+    <string name="user_data_download_success">Daataan kee milkaa\'inaan buufamet jira.\nGalmee sirna buufata teessoo \"Downloads\" keessaa argachuu dandeessa.</string>
+    <string name="open_download_folder">Galmee \"Downloads\" bani</string>
+    <string name="error_download_failure_reason_format">Buusuun hin milkoofne. Sababni isaa: %s</string>
+    <string name="download_certificate">Sartifikeettii buusi</string>
+    <string name="storage_permission_not_granted">Hayyamni kuusaa hin kennamne</string>
+    <string name="courses_reminder_notif_text">Dear learner, you have not completed your course yet. Please go back and complete your course.\nውድ ሰልጣኝ: እስከ አሁን ድረስ የተሰጠዎትን ኮርስ ሠርተው አላጠናቀቁም። እባክዎትን ወደ ኮርሱ ተመልሰው ያጠናቁ።\nKabajamoo Leenji’aa, hanga ammatti koorsii isiniif ramadame hojjettanii hin xumuurre. Maaloo gara koorsii keessaniitti deebi’aa xumuuraa.</string>
+    <string name="courses_reminder_notif_title">Yaaddachiisa Koorsii</string>
+    <string name="courses_reminder_settings">Qindaa\'inoota Yaaddachiisaa</string>
+    <string name="change_password">Jecha darbii jijjiiri</string>
+    <string name="change_password_success">Jechi darbii kee milkiin haaromfameera</string>
+    <string name="change_password_intro">Jecha darbii kee jijjiiruuf, maaloo jecha darbii haaraa as jalatti galchi:</string>
+
+    <string name="text_size_smallest">Baayyee Xiqqoo</string>
+    <string name="text_size_small">Xiqqoo</string>
+    <string name="text_size_normal">Baratamaa</string>
+    <string name="text_size_large">Guddaa</string>
+    <string name="text_size_largest">Baayyee Guddaa</string>
+
+    <string name="interval_weekly">Toorbaniin</string>
+    <string name="interval_daily">Guyyaa dhaan</string>
+
+    <string name="week_day_1">Dilbata</string>
+    <string name="week_day_2">Wiixata</string>
+    <string name="week_day_3">Kibxata</string>
+    <string name="week_day_4">Roobii</string>
+    <string name="week_day_5">Kamisa</string>
+    <string name="week_day_6">Jimaata</string>
+    <string name="week_day_7">Sanbata</string>
+
+    <string name="warning_reminder_weekly_just_one_day">Kan torban gidduutti jiruuf guyyaa tokko qofa saagamuu qaba</string>
+    <string name="warning_reminder_at_least_one_day">Yoo xiqqaate guyyaa tokko kaa\'uu qabda</string>
+
+    <string name="quiz_protected">Battalleen eegumsa/ hidhama qaba</string>
+    <string name="please_enter_quiz_password">Battallee kana banuuf jecha darbii kee galchi</string>
+    <string name="invalid_password">Jecha darbii sirrii hin taane</string>
+    <string name="pref_export_full_activity_title">Daataa sochii hojii guutuu erguu</string>
+    <string name="full_activity_exported_success">Sochiin hojii guutuun milkaa\'inaan ergameera.\n\n\"Qoodi\" kan jedhu cuqaasuun gara moosaajii alaatti erguu dandeessa</string>
+    <string name="full_activity_export_path">\n\nKaraa: %s.</string>
+    <string name="share">Qoodi</string>
+    <string name="no_app_to_share">Dogoggora. Faayila kana qooduuf moosaajiin fe\'ame hin jiru</string>
+    <string name="pref_flush_app_cache">Kuftalee moosaajii balleessi</string>
+    <string name="cache_flushed_successfuly">Kuftaleen moosaajii badeera</string>
+
+    <string name="incorrect_password_topic">Jecha darbii kutaa kana banu sirrii miti. Irra deebi\'ii yaali</string>
+    <string name="password_needed">Jecha darbii barbaachisa</string>
+    <string name="password_needed_description">Kutaan kun jecha darbiitiin hidhameera. \n Qabiyyee kana argachuuf jecha darbii bakka armaan gadii galchi (kana yeroo tokko qofa gochuu si barbaachisa).</string>
+    <string name="password_activity_title">Hojjetamaan kun hidhameera</string>
+    <string name="password_activity_description">Hojjetamaan kun jecha darbiitiin hidhameera. \n Qabiyyee kana argachuuf maaloo jecha darbii bakka armaan gadii galchi. </string>
+    <string name="password_activity_incorrect">Jecha darbii sirrii hin taane. Irra deebi\'i</string>
+    <string name="password_activity_submit">Qabiyyee bani</string>
+    <string name="unlock_topic">Kutaa kana bani</string>
+    <string name="staging_warning_msg">Sarvarii qorannof oole waliin walqunnamteetta.</string>
+
+    <!-- Status badges -->
+    <string name="status_draft">Wixinee</string>
+    <string name="status_new_download_disabled">Buufata haaraan cufameera</string>
+    <string name="status_archived">Kuusaa keessa jira</string>
+    <string name="status_read_only">Dubbisa qofa</string>
+    <string name="quiz">Battallee</string>
+    <string name="read_only_answer_unavailable_message">Koorsiin kun amma dubbisa qofaaf waan ta\'eef %s argamuu hin danda\'amu</string>
+    <string name="view_your_previous_attempts">Yaalii kee duraa ilaali</string>
+    <string name="invalid_parameters">Qabduu sirrii hin taane</string>
+    <string name="source_dir_does_not_exist">Galmeen teessoo madda faayilaa kanaa hin argamne</string>
+    <string name="source_file_does_not_exist">Maddi faayila kanaa hin argamne</string>
+    <string name="dest_dir_does_not_exist">Galmeen galma ce\'umsa faayilaa hin argamne</string>
+    <string name="pref_update_activity_on_login">Sochii hojii yeroo seenamu haaressi</string>
+
+    <!-- Update activity on login -->
+    <string name="none">Homaa</string>
+    <string name="optional">Dirqama miti</string>
+    <string name="force">Dirqama</string>
+    <string name="updating_course_activity">Sochii hojilee haaromsaa jira: %s</string>
+    <string name="error_unable_retrieve_course_activity">Yeroo ammaa sochii hojilee koorsii argachuu hin dandeenye</string>
+    <string name="connection_unavailable_couse_activity">interneetiin hin jiru , sochii hojilee koorsii argachuu hin dandeenye</string>
+    <string name="try_again">Irra deebi\'i</string>
+    <string name="continue_anyway">Waan fedheefuu itti fufi</string>
+    <string name="offline_user_not_found">Fayyadamaan sarara alaa hin arganne.\nInterneetii waan hin qabneef fayyadamtoota meeshaa keessaa qofatu argama.</string>
+    <string name="offline_user_invalid_password">Jecha darbii sirrii hin taane.\nInterneetii waan hin qabneef fayyadamtoota meeshaa keessaa qofatu argama.</string>
+    <string name="sdcard_not_available">Meemoriin keessa hin jiru</string>
+    <string name="sdcard_not_available_message">Moosaajiicha fayyadamuuf meemoriin keessa jiraachuu qaba. \nMaaloo meemorii itti deebisii galchi.</string>
+    <string name="sdcard_not_available_change_settings">Meemoriin keessa hin jiru. Bakka kuusaa alaatti jijjiiruu hin dandeenye</string>
+    <string name="close_app">Moosaajii cufi</string>
+
+    <!-- Offline course import -->
+    <string name="title_offline_course_import">Koorsii sarara ala/ interneetii malee fe\'uu</string>
+    <string name="offline_course_import.instructions">Koorsii galchuuf, jalqaba qaree \"Faayilota dabali\" jedhu cuqaasuun faayilii .zip kan koorsii fi miidiyaa galchuu barbaaddu filadhu.\n\nErgasii, hanga faayiloonni tarree irratti mul\'atanitti eegiitii cuqaasi. Qabduu \"Galchi\" jedhu cuqaasi.</string>
+    <string name="offline_course_import.add_files">Faayiloota Dabali</string>
+    <string name="offline_course_import.import">Galchi</string>
+    <string name="offline_course_import.import_in_progress">Faayiloonni galaa jiru. Maaloo obsi.</string>
+    <string name="offline_course_import.importing_media_file">Faayilootni Miidiyaa galaa jiru: %s</string>
+    <string name="offline_course_import.empty_files">Faayilootni homtuu hin dabalamne.</string>
+    <string name="offline_course_import.import_completed">Galchuun xumurrameera.</string>
+    <string name="offline_course_import.media_files_imported">Faayiloonni miidiyaa galaniiru.</string>
+    <string name="offline_course_import.course_files_imported">Faayiloonni koorsii galaniiru.</string>
+    <string name="bluetooth_not_supported">Bilutuuziin hin deeggaramu</string>
+    <string name="change_interface_language">Afaan Walqunnamtii Jijjiiri</string>
+
+</resources>
+
+

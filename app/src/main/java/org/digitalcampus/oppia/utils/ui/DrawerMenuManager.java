@@ -26,6 +26,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
+import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.fragment.app.FragmentManager;
+
 import com.google.android.material.navigation.NavigationView;
 
 import org.digitalcampus.mobile.learning.BuildConfig;
@@ -39,15 +46,10 @@ import org.digitalcampus.oppia.activity.SyncActivity;
 import org.digitalcampus.oppia.activity.TagSelectActivity;
 import org.digitalcampus.oppia.application.AdminSecurityManager;
 import org.digitalcampus.oppia.application.SessionManager;
+import org.digitalcampus.oppia.fragments.prefs.DisplayPrefsFragment;
 
 import java.util.HashMap;
 import java.util.Map;
-
-import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.widget.Toolbar;
-import androidx.core.view.GravityCompat;
-import androidx.drawerlayout.widget.DrawerLayout;
 
 public class DrawerMenuManager {
 
@@ -61,9 +63,10 @@ public class DrawerMenuManager {
     private ActionBarDrawerToggle drawerToggle;
     private DrawerLayout drawerLayout;
     private Map<Integer, MenuOption> customOptions = new HashMap<>();
-
-    public DrawerMenuManager(AppActivity act) {
+    private FragmentManager fragmentManager;
+    public DrawerMenuManager(AppActivity act, FragmentManager fragmentManager) {
         drawerAct = act;
+        this.fragmentManager = fragmentManager;
     }
 
     public void initializeDrawer() {
@@ -109,7 +112,7 @@ public class DrawerMenuManager {
         MenuItem itemCourseDownload = drawerMenu.findItem(R.id.menu_download);
         MenuItem itemLanguageDialog = drawerMenu.findItem(R.id.menu_language);
         MenuItem itemSync = drawerMenu.findItem(R.id.menu_sync);
-
+        MenuItem itemInterfaceLanguageDialog = drawerMenu.findItem(R.id.menu_interface_language);
         if (currentOption != null) {
             MenuItem current = drawerMenu.findItem(currentOption);
             if (current != null) {
@@ -123,6 +126,8 @@ public class DrawerMenuManager {
         itemCourseDownload.setVisible(prefs.getBoolean(PrefsActivity.PREF_DOWNLOAD_ENABLED, BuildConfig.MENU_ALLOW_COURSE_DOWNLOAD));
         itemLanguageDialog.setVisible(customOptions.containsKey(R.id.menu_language)
                 && prefs.getBoolean(PrefsActivity.PREF_CHANGE_LANGUAGE_ENABLED, BuildConfig.MENU_ALLOW_LANGUAGE));
+//        itemInterfaceLanguageDialog.setVisible(customOptions.containsKey(R.id.menu_interface_language)
+//                && prefs.getBoolean(PrefsActivity.PREF_INTERFACE_LANGUAGE, BuildConfig.MENU_ALLOW_LANGUAGE));
         itemSync.setVisible(BuildConfig.MENU_ALLOW_SYNC);
     }
 
@@ -161,7 +166,13 @@ public class DrawerMenuManager {
 
         return true;
     }
-
+    private void launchLanguagePreferenceFragment() {
+        DisplayPrefsFragment fragment = DisplayPrefsFragment.newInstance();
+        fragmentManager.beginTransaction()
+                .replace(R.id.frame_main, fragment, "language_prefs_fragment") // Change 'fragment_container' to your layout ID
+                .addToBackStack(null) // Optional: Allows navigation back to the previous fragment
+                .commit();
+    }
     public void launchIntentForActivity(Class<?> activityClass) {
         Intent i = new Intent(drawerAct, activityClass);
         drawerAct.overridePendingTransition(

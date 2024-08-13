@@ -39,10 +39,12 @@ import org.digitalcampus.oppia.gamification.GamificationServiceDelegate;
 import org.digitalcampus.oppia.model.Activity;
 import org.digitalcampus.oppia.model.Course;
 import org.digitalcampus.oppia.model.Media;
+import org.digitalcampus.oppia.utils.UIUtils;
 import org.digitalcampus.oppia.utils.storage.Storage;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Locale;
 
 import androidx.preference.PreferenceManager;
 
@@ -188,6 +190,7 @@ public class VideoPlayerActivity extends AppActivity implements SurfaceHolder.Ca
     public void onPrepared(MediaPlayer mp) {
         controller.setMediaPlayer(this);
         controller.setAnchorView(binding.videoSurfaceContainer);
+        selectDefaultAudioTrack(mp); // Call the method to select the default audio track
         start();
     }
     // End MediaPlayer.OnPreparedListener
@@ -287,6 +290,21 @@ public class VideoPlayerActivity extends AppActivity implements SurfaceHolder.Ca
         Log.d(TAG, "Video completed!");
         binding.endContainer.setVisibility(View.VISIBLE);
         videoEndReached = true;
+    }
+    private void selectDefaultAudioTrack(MediaPlayer mp) {
+        MediaPlayer.TrackInfo[] trackInfoArray = mp.getTrackInfo();
+        String selectedContentLanguage = UIUtils.mapISO6391toISO6392(UIUtils.getPreferredLanguage(prefs)).toLowerCase();
+        for (int i = 0; i < trackInfoArray.length; i++) {
+            String a = trackInfoArray[i].getLanguage();
+
+            if (trackInfoArray[i].getTrackType() == MediaPlayer.TrackInfo.MEDIA_TRACK_TYPE_AUDIO &&
+                    trackInfoArray[i].getLanguage().toLowerCase().equals(selectedContentLanguage)) {
+                mp.selectTrack(i);
+                break;
+            }
+
+        }
+
     }
 
 }
