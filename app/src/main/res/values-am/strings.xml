@@ -678,6 +678,7 @@
     <string name="bluetooth_not_supported">ብሉቱዝ አይደገፍም</string>
     <string name="change_interface_language">የበይነገጽ ቋንቋ ቀይር</string>
     <string name="Video_list" />
+    <string name="nav_hep_ai">HEP AI</string>
 
 </resources>
 

@@ -36,7 +36,7 @@ import org.digitalcampus.oppia.task.FetchServerInfoTask;
 import org.digitalcampus.oppia.utils.ConnectionUtils;
 import org.digitalcampus.oppia.utils.UIUtils;
 import org.digitalcampus.oppia.utils.ui.DrawerMenuManager;
-
+import org.digitalcampus.oppia.fragments.CustomAIChatFragment;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -51,6 +51,7 @@ public class MainActivity extends AppActivity implements BottomNavigationView.On
         View.OnClickListener {
 
     public static final String EXTRA_FIRST_LOGIN = "extra_first_login";
+    public static final String EXTRA_BOTTOM_NAV_SELECTION = "extra_bottom_nav_selection";
 
     private DrawerMenuManager drawer;
     private MenuItem searchMenuItem;
@@ -94,6 +95,8 @@ public class MainActivity extends AppActivity implements BottomNavigationView.On
         binding.drawerVersionName.setText(getString(R.string.version, BuildConfig.VERSION_NAME));
 
         checkNotificationPermission();
+
+        handleBottomNavigationIntent(getIntent());
 
     }
 
@@ -309,6 +312,17 @@ public class MainActivity extends AppActivity implements BottomNavigationView.On
                 fragment = MainPointsFragment.newInstance();
                 break;
 
+            case R.id.nav_bottom_video:
+                Intent videoIntent = new Intent(this, VideoListActivity.class);
+                startActivity(videoIntent);
+                return true;
+            case R.id.nav_bottom_hep_ai: // New case for chat window
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.frame_main, new CustomAIChatFragment())
+                        .addToBackStack(null)
+                        .commit();
+                return true;
             default:
                 throw new IllegalArgumentException("menuItem not valid: " + menuItem.toString());
         }
@@ -321,7 +335,34 @@ public class MainActivity extends AppActivity implements BottomNavigationView.On
     }
 
     private void configureSearchButtonVisibility(int itemId) {
-        searchMenuItem.setVisible(itemId == R.id.nav_bottom_home);
+        if (searchMenuItem != null) {
+            searchMenuItem.setVisible(itemId == R.id.nav_bottom_home);
+        }
+    }
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        setIntent(intent);
+        handleBottomNavigationIntent(intent);
+    }
+
+    private void handleBottomNavigationIntent(Intent intent) {
+        if (intent == null) {
+            return;
+        }
+
+        if (!intent.hasExtra(EXTRA_BOTTOM_NAV_SELECTION)) {
+            return;
+        }
+
+        int targetItemId = intent.getIntExtra(EXTRA_BOTTOM_NAV_SELECTION, R.id.nav_bottom_home);
+        if (binding.navBottomView.getSelectedItemId() == targetItemId) {
+            return;
+        }
+
+        binding.navBottomView.setSelectedItemId(targetItemId);
+        intent.removeExtra(EXTRA_BOTTOM_NAV_SELECTION);
     }
 
     @Override

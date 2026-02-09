@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?><!DOCTYPE resources [<!ENTITY appName "Extension Essentials"><!ENTITY companyName "Ethiopia FMoH"> ]>
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">&appName;</string>
     <string name="app_logo_alt">&companyName; Logo</string>
     <string name="about_logged_in">Logged in as: %1$s</string>
@@ -21,6 +21,22 @@
     <string name="menu_sort_by_course">Sort by Course</string>
     <string name="menu_sort_by_filename">Sort by Filename</string>
     <string name="menu_select_all">Select All</string>
+
+    <string name="chat_feedback_like">Mark response helpful</string>
+    <string name="chat_feedback_dislike">Mark response not helpful</string>
+    <string name="chat_feedback_prompt">We are sorry the response was not helpful. Could you tell us more? (Multiple selections allowed)</string>
+    <string name="chat_feedback_thanks_message" tools:ignore="DuplicateDefinition">Thank you for your feedback!</string>
+    <string name="chat_feedback_sorry_message">Thank you for helping us improve.</string>
+
+    <string name="video_filter_all">All</string>
+    <string name="video_filter_favorites">Favorites</string>
+    <string name="video_favorite_add">Add to favorites</string>
+    <string name="video_favorite_remove">Remove from favorites</string>
+    <string name="video_favorite_added_toast">Saved to favorites</string>
+    <string name="video_favorite_removed_toast">Removed from favorites</string>
+    <string name="ai_chat_welcome_with_name">Hello, %1$s
+How can I assist you today?</string>
+    <string name="ai_chat_welcome_generic">Hello! How can I assist you today?</string>
 
     <string name="service_tracker">&appName; Tracker Service</string>
 
@@ -84,7 +100,7 @@
     <string name="widget_quiz_unavailable_course">You must complete all the previous activities in this course before this quiz becomes available to you.</string>
     <string name="widget_quiz_unavailable_attempts">You have already attempted this quiz the max number of times allowed</string>
     <string name="widget_resource_open_file">Open \'%1$s\'</string>
-
+    <string name="feedback_response">We\'re sorry the response wasn\'t helpful. Could you tell us more? (Multiple selections allowed)</string>
     <string name="course_context_reset">Reset</string>
     <string name="course_context_delete">Delete</string>
     <string name="course_context_update_activity">Update Activity</string>
@@ -151,7 +167,7 @@
     <string name="prefCoursesReminderIntervalTitle">Reminders interval</string>
     <string name="prefCoursesReminderDaysTitle">Reminder days</string>
     <string name="prefCoursesReminderTimeTitle">Reminder time</string>
-    
+
     <!-- Strings relative to Storage -->
     <string name="prefStorageLocation">Storage Location</string>
     <string name="prefStorageOptionInternal">Internal</string>
@@ -197,6 +213,7 @@
     <string name="no">No</string>
     <string name="close">Close</string>
     <string name="error">Error</string>
+    <string name="error_no_viewer_app">No app found to open this video.</string>
     <string name="info">Info</string>
     <string name="warning">Warning</string>
     <string name="loading">Loading</string>
@@ -391,15 +408,19 @@
     <string name="privacy.section.analytics">Analytics Preferences</string>
     <string name="privacy.section.manage_data">Manage Your Data</string>
 
-    <string name="privacy.download_data.info">Export a copy of the contents in your &appName; account to back it up or explore it.</string>
+    <string name="privacy.download_data.info">Export a copy of the contents in your &appName;
+        account to back it up or explore it.</string>
     <string name="privacy.download_data.label">Download Data</string>
-    <string name="privacy.download_data.description">You can export to this device your data in the &appName; server in a readable format. Please select the information you want to download: </string>
+    <string name="privacy.download_data.description">You can export to this device your data in the &appName;
+        server in a readable format. Please select the information you want to download: </string>
     <string name="privacy.download_data.profile">Profile Data</string>
     <string name="privacy.download_data.course">Course Activity</string>
     <string name="privacy.download_data.quizzes">Quiz and feedback attempts</string>
-    <string name="privacy.delete_account.info">Completely remove your account and all associated data from the &appName; server.</string>
+    <string name="privacy.delete_account.info">Completely remove your account and all associated data from the &appName;
+        server.</string>
     <string name="privacy.delete_account.label">Delete Account</string>
-    <string name="privacy.delete_account.explanation">Deleting your account is permanent, all your data will be removed. To use &appName; again you will need to create a new account. \n\nPlease enter your password below to confirm deletion of your account.</string>
+    <string name="privacy.delete_account.explanation">Deleting your account is permanent, all your data will be removed. To use &appName;
+        again you will need to create a new account. \n\nPlease enter your password below to confirm deletion of your account.</string>
 
     <string name="analytics.optin.title">Analytics Preferences</string>
     <string name="analytics.optin.description">To help improve &appName;, you can opt-in to sending automated bug reports and additional analytics. You can change these settings at any time in the app.</string>
@@ -677,8 +698,51 @@
     <string name="offline_course_import.course_files_imported">Course files imported</string>
     <string name="bluetooth_not_supported">Bluetooth not supported</string>
     <string name="change_interface_language">Change Interface Language</string>
-    <string name="Video_list" >Video List </string>
+    <string name="Video_list">Video List </string>
     <string name="nav_video">Videos</string>
+    <string name="nav_hep_ai">HEP AI</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
 
 </resources>
 

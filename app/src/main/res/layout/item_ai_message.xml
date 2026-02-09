@@ -1,0 +1,84 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textViewMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_ai_message"
+        android:lineSpacingExtra="4dp"
+        android:padding="8dp"
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        android:id="@+id/imagesContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="vertical" />
+
+    <LinearLayout
+        android:id="@+id/feedbackContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:id="@+id/buttonLike"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/chat_feedback_like"
+            android:padding="4dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_thumb_up"
+            app:tint="@color/ai_feedback_inactive" />
+
+        <ImageButton
+            android:id="@+id/buttonDislike"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="4dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/chat_feedback_dislike"
+            android:padding="4dp"
+            android:rotation="180"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_thumb_up"
+            app:tint="@color/ai_feedback_inactive" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/feedbackPromptText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/ai_feedback_inactive"
+        android:textSize="14sp"
+        android:visibility="gone"
+        android:text="@string/chat_feedback_prompt" />
+
+    <LinearLayout
+        android:id="@+id/feedbackChipContainer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:orientation="horizontal"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/feedbackStatusText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/ai_feedback_inactive"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+</LinearLayout>

@@ -52,5 +52,6 @@
     <dimen name="size_circularprogressbar_scorecard_list">140dp</dimen>
     <dimen name="small_icon_size">18dp</dimen>
     <dimen name="subtitle_bar_height">60dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
 
 </resources>

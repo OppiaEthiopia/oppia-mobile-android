@@ -16,9 +16,12 @@
         android:id="@+id/nav_bottom_points"
         android:icon="@drawable/ic_nav_points"
         android:title="@string/nav_points" />
-<!--    <item-->
-<!--        android:id="@+id/nav_bottom_video"-->
-<!--        android:icon="@drawable/ic_nav_video"-->
-<!--        android:title="@string/nav_video" />-->
-
+    <item
+        android:id="@+id/nav_bottom_video"
+        android:icon="@drawable/ic_nav_video"
+        android:title="@string/nav_video" />
+    <item
+        android:id="@+id/nav_bottom_hep_ai"
+        android:icon="@drawable/hep_assit_ai"
+        android:title="@string/nav_hep_ai" />
 </menu>

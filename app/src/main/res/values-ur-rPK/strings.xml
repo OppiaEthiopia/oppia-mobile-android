@@ -221,5 +221,6 @@
 	<string name="submit_stats_btn_text">جمع کروادیں</string>
 	
 	<string name="media_player_description">&appName; Media Player</string>
+    <string name="nav_hep_ai">HEP AI</string>
 
 </resources>

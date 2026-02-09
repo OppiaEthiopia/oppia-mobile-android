@@ -8,47 +8,61 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
-    <uses-permission android:name="android.permission.WAKE_LOCK" />
-    <!-- this next permission is only needed for testing/debug purposes -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" /> <!-- this next permission is only needed for testing/debug purposes -->
     <uses-permission
         android:name="android.permission.SET_ANIMATION_SCALE"
-        tools:ignore="ProtectedPermissions" />
-
-    <!-- Bluetooth permissions -->
-    <uses-permission android:name="android.permission.BLUETOOTH"
+        tools:ignore="ProtectedPermissions" /> <!-- Bluetooth permissions -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
         android:maxSdkVersion="30" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_ADMIN"
         android:maxSdkVersion="30" />
     <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
-    <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
-        android:usesPermissionFlags="neverForLocation"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" />
-
-    <!-- Dangerous-level permissions (need user confirmation) -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_SCAN"
+        android:usesPermissionFlags="neverForLocation" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADVERTISE" /> <!-- Dangerous-level permissions (need user confirmation) -->
+    <uses-permission
+        android:name="android.permission.ACCESS_COARSE_LOCATION"
         android:maxSdkVersion="30" />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"
+    <uses-permission
+        android:name="android.permission.ACCESS_FINE_LOCATION"
         android:maxSdkVersion="30" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
+    <queries>
+        <intent>
+            <action android:name="android.intent.action.VIEW" />
+
+            <category android:name="android.intent.category.BROWSABLE" />
+
+            <data android:mimeType="*/*" />
+        </intent>
+    </queries>
 
     <application
         android:name="org.digitalcampus.oppia.application.App"
         android:allowBackup="false"
-        tools:replace="android:allowBackup"
         android:icon="@drawable/app_icon"
         android:label="@string/app_name"
-        android:theme="@style/Oppia.Theme"
-        android:supportsRtl="true"
         android:requestLegacyExternalStorage="true"
-        android:usesCleartextTraffic="true">
+        android:supportsRtl="true"
+        android:theme="@style/Oppia.Theme"
+        android:usesCleartextTraffic="true"
+        tools:replace="android:allowBackup">
+        <activity
+            android:name="org.digitalcampus.oppia.activity.CustomAIChatActivity"
+            android:exported="false"
+            android:theme="@style/Oppia.Theme" />
         <activity
             android:name="org.digitalcampus.oppia.activity.StartUpActivity"
-            android:label="@string/app_name"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -70,20 +84,20 @@
         <activity
             android:name="org.digitalcampus.oppia.activity.DownloadActivity"
             android:label="@string/title_download_activity"
-            android:theme="@style/Oppia.ToolbarTheme"
             android:parentActivityName="org.digitalcampus.oppia.activity.MainActivity"
+            android:theme="@style/Oppia.ToolbarTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="org.digitalcampus.oppia.activity.TagSelectActivity"
             android:label="@string/title_tag_select_activity"
-            android:theme="@style/Oppia.ToolbarTheme"
             android:parentActivityName="org.digitalcampus.oppia.activity.MainActivity"
+            android:theme="@style/Oppia.ToolbarTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="org.digitalcampus.oppia.activity.PrefsActivity"
             android:label="@string/title_prefs"
-            android:theme="@style/Oppia.ToolbarTheme"
             android:parentActivityName="org.digitalcampus.oppia.activity.MainActivity"
+            android:theme="@style/Oppia.ToolbarTheme"
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="org.digitalcampus.oppia.activity.AboutActivity"
@@ -92,22 +106,22 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="org.digitalcampus.oppia.activity.WelcomeActivity"
+            android:configChanges="orientation|screenSize|keyboardHidden"
             android:label="@string/app_name"
             android:theme="@style/Oppia.ToolbarTheme"
-            android:configChanges="orientation|screenSize|keyboardHidden"
             android:windowSoftInputMode="adjustResize|stateAlwaysHidden" />
         <activity
             android:name="org.digitalcampus.oppia.activity.CourseMetaPageActivity"
-            android:theme="@style/Oppia.ToolbarTheme"
-            android:label="@string/title_course_meta" />
+            android:label="@string/title_course_meta"
+            android:theme="@style/Oppia.ToolbarTheme" />
         <activity
             android:name="org.digitalcampus.oppia.activity.DownloadMediaActivity"
             android:label="@string/title_download_media"
             android:theme="@style/Oppia.ToolbarTheme" />
         <activity
             android:name="org.digitalcampus.oppia.activity.VideoListActivity"
-            android:theme="@style/Oppia.ToolbarTheme"
-            android:label="@string/Video_list"/>
+            android:label="@string/app_name"
+            android:theme="@style/Oppia.ToolbarTheme" />
         <activity
             android:name="org.digitalcampus.oppia.activity.ScorecardActivity"
             android:label="@string/title_scorecard"
@@ -149,24 +163,23 @@
         <activity
             android:name="org.digitalcampus.oppia.activity.DeviceListActivity"
             android:configChanges="orientation|screenSize|keyboardHidden"
-            android:windowSoftInputMode="adjustResize"
             android:label="@string/bluetooth.select_device"
-            android:theme="@style/Oppia.Dialog" />
-
-        <activity android:name="org.digitalcampus.oppia.activity.EditProfileActivity"
+            android:theme="@style/Oppia.Dialog"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name="org.digitalcampus.oppia.activity.EditProfileActivity"
             android:label="@string/title_activity_edit_profile"
             android:theme="@style/Oppia.ToolbarTheme"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
-
-        <activity android:name="org.digitalcampus.oppia.activity.ChangePasswordActivity"
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
+        <activity
+            android:name="org.digitalcampus.oppia.activity.ChangePasswordActivity"
             android:label="@string/change_password"
             android:theme="@style/Oppia.ToolbarTheme"
-            android:windowSoftInputMode="stateAlwaysHidden|adjustResize"/>
-
+            android:windowSoftInputMode="stateAlwaysHidden|adjustResize" />
         <activity
             android:name="org.digitalcampus.oppia.activity.ViewDigestActivity"
-            android:theme="@style/Oppia.ToolbarTheme.Dark"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Oppia.ToolbarTheme.Dark">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
 
@@ -178,22 +191,18 @@
                 <data android:pathPrefix="/view" />
                 <data android:scheme="https" />
                 <data android:scheme="http" />
-
             </intent-filter>
         </activity>
-
-        <activity android:name="org.digitalcampus.oppia.activity.AnalyticsOptinActivity"
+        <activity
+            android:name="org.digitalcampus.oppia.activity.AnalyticsOptinActivity"
             android:label="@string/analytics.optin.title"
             android:theme="@style/Oppia.ToolbarTheme"
-            android:windowSoftInputMode="adjustResize"/>
-
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="org.digitalcampus.oppia.activity.OfflineCourseImportActivity"
             android:label="@string/title_offline_course_import"
             android:theme="@style/Oppia.ToolbarTheme"
-            android:windowSoftInputMode="adjustResize">
-        </activity>
-
+            android:windowSoftInputMode="adjustResize"></activity>
 
         <service
             android:name="org.digitalcampus.oppia.service.DownloadService"
@@ -222,7 +231,6 @@
                 android:resource="@xml/filepaths" />
         </provider>
 
-
         <service
             android:name="androidx.appcompat.app.AppLocalesMetadataHolderService"
             android:enabled="false"
@@ -231,15 +239,6 @@
                 android:name="autoStoreLocales"
                 android:value="true" />
         </service>
-
     </application>
-
-    <queries>
-        <intent>
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.BROWSABLE" />
-            <data android:mimeType="*/*" />
-        </intent>
-    </queries>
 
 </manifest>

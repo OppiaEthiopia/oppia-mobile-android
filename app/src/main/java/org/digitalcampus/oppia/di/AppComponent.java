@@ -16,6 +16,7 @@ import org.digitalcampus.oppia.activity.StartUpActivity;
 import org.digitalcampus.oppia.activity.TagSelectActivity;
 import org.digitalcampus.oppia.activity.ViewDigestActivity;
 import org.digitalcampus.oppia.activity.WelcomeActivity;
+import org.digitalcampus.oppia.activity.VideoListActivity;
 import org.digitalcampus.oppia.application.AdminSecurityManager;
 import org.digitalcampus.oppia.application.App;
 import org.digitalcampus.oppia.database.DBDataMigration;
@@ -82,6 +83,7 @@ public interface AppComponent {
 
     void inject(AnswerWidget fragment);
     void inject(EditProfileActivity activity);
+    void inject(VideoListActivity activity);
 
     void inject(AdminSecurityManager adminSecurityManager);
 

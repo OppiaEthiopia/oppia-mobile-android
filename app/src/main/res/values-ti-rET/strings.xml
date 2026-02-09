@@ -2,4 +2,5 @@
 <resources>
     <string name="app_name"></string>
     <string name="Video_list" />
+    <string name="nav_hep_ai">HEP AI</string>
 </resources>
